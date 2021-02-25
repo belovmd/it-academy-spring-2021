@@ -18,4 +18,4 @@ def solve(n):
                 if not under_attack(i+1, solution)]
 
 for answer in solve(BOARD_SIZE):
-    print (answer)
+    print(answer)
