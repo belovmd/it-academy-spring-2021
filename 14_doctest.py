@@ -1,20 +1,10 @@
 # task №14: "Doctest-based testing"
-import doctest
-
-
 def median(pool):
-<<<<<<< HEAD
-
-    # Statistical median to demonstrate doctest.
-    # >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-    # 6 change to 7 in order to pass the test"""
-=======
-"""Statistical median to demonstrate doctest.
->>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-6 #change to 7 in order to pass the test
-"""
->>>>>>> 9bca17d6d3beb019fcd9193d194755838a852f9e
-
+    """
+    Statistical median to demonstrate doctest.
+    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+    6 #change to 7 in order to pass the test
+    """
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -24,4 +14,6 @@ def median(pool):
 
 
 if __name__ == '__main__':
+    import doctest
+
     doctest.testmod()
