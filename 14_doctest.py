@@ -3,10 +3,17 @@ import doctest
 
 
 def median(pool):
+<<<<<<< HEAD
 
     # Statistical median to demonstrate doctest.
     # >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     # 6 change to 7 in order to pass the test"""
+=======
+"""Statistical median to demonstrate doctest.
+>>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+6 #change to 7 in order to pass the test
+"""
+>>>>>>> 9bca17d6d3beb019fcd9193d194755838a852f9e
 
     copy = sorted(pool)
     size = len(copy)
