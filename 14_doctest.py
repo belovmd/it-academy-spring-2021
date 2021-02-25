@@ -1,4 +1,7 @@
 # task №14: "Doctest-based testing"
+import doctest
+
+
 def median(pool):
     # Statistical median to demonstrate doctest.
     # >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
@@ -13,6 +16,4 @@ def median(pool):
 
 
 if __name__ == '__main__':
-    import doctest
-
     doctest.testmod()
