@@ -1,6 +1,8 @@
 import csv
 
 # need to define cmp function in Python 3
+
+
 def cmp(a, b):
     return (a > b) - (a < b)
 
@@ -21,4 +23,3 @@ with open('stocks.csv', 'r') as stocksFile:
     for ticker, name, price, change, pct in stocks:
         status = status_labels[cmp(float(change), 0.0)]
         print ('%s is %s (%.2f)' % (name, status, float(pct)))
-        
