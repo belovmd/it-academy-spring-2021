@@ -4,7 +4,6 @@ def median(pool):
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     7
     """
-
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
