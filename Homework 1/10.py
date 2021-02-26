@@ -15,5 +15,4 @@ for activity_time in sorted(activities.keys()):
         print (activities[activity_time])
         break
 else:
-    print ('Unknown, AFK or sleeping!')
-    
+    print ('Unknown, AFK or sleeping!')    
