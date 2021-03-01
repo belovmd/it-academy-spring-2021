@@ -1,5 +1,5 @@
 from time import localtime
-import re
+from re import match
 from sys import argv
 from glob import glob
 
@@ -15,13 +15,13 @@ friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
-    
+
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
-    
+
 def greet(name):
     print('Hello', name)
 greet('Jack')
@@ -30,10 +30,11 @@ greet('Bob')
 
 
 for test_string in ['555-1212', 'ILL-EGAL']:
-    if re.match(r'^\d{3}-\d{4}$', test_string):
+    if match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'rejected')
+
 
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
@@ -65,7 +66,7 @@ for file_name in sorted(python_files):
 
     print()
 
-    
+
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
@@ -83,7 +84,7 @@ for activity_time in sorted(activities.keys()):
 else:
     print('Unknown, AFK or sleeping!')
 
-    
+
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
