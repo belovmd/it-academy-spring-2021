@@ -1,7 +1,7 @@
 from time import localtime
 import re
-import sys
-import glob
+from sys import argv
+from glob import glob
 
 print('Hello World!')
 
@@ -41,7 +41,7 @@ print('I owe the grocer $%.2f' % grocery_bill)
 # This program adds up integers that have been passed as arguments in the command line
 
 try:
-    total = sum(int(arg) for arg in sys.argv[1:])
+    total = sum(int(arg) for arg in argv[1:])
     print('sum =', total)
 except ValueError:
     print('Please supply integer arguments')
@@ -49,7 +49,7 @@ except ValueError:
 # indent your Python code to put into an email
 
 # glob supports Unix style pathname extensions
-python_files = glob.glob('*.py')
+python_files = glob('*.py')
 for file_name in sorted(python_files):
     print('    ------' + file_name)
 
