@@ -1,7 +1,7 @@
-from time import localtime
-from re import match
+import glob
+import re
 from sys import argv
-from glob import glob
+from time import localtime
 
 
 print('Hello World!')
@@ -24,13 +24,15 @@ while babies < 100:
 
 def greet(name):
     print('Hello', name)
+
+
 greet('Jack')
 greet('Jill')
 greet('Bob')
 
 
 for test_string in ['555-1212', 'ILL-EGAL']:
-    if match(r'^\d{3}-\d{4}$', test_string):
+    if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'rejected')
@@ -56,7 +58,7 @@ except ValueError:
 # indent your Python code to put into an email
 
 # glob supports Unix style pathname extensions
-python_files = glob('*.py')
+python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
     print('    ------' + file_name)
 
@@ -93,6 +95,5 @@ take one down, pass it around,
 '''
 bottles_of_beer = 9
 while bottles_of_beer > 1:
-    print(REFRAIN % (bottles_of_beer, bottles_of_beer,
-        bottles_of_beer - 1))
+    print(REFRAIN % (bottles_of_beer, bottles_of_beer, bottles_of_beer - 1))
     bottles_of_beer -= 1
