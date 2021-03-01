@@ -3,10 +3,13 @@ import re
 from sys import argv
 from glob import glob
 
+
 print('Hello World!')
+
 
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
+
 
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
@@ -17,6 +20,7 @@ while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
+    
 def greet(name):
     print('Hello', name)
 greet('Jack')
@@ -37,6 +41,7 @@ my_purchase = {
 grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
+
 
 # This program adds up integers that have been passed as arguments in the command line
 
@@ -59,6 +64,7 @@ for file_name in sorted(python_files):
 
     print()
 
+    
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
@@ -76,6 +82,7 @@ for activity_time in sorted(activities.keys()):
 else:
     print('Unknown, AFK or sleeping!')
 
+    
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
