@@ -10,9 +10,19 @@ dinner_recipe = '''<html><body><table>
 <tr><td>1</td><td>jar</td><td>pesto</td></tr>
 </table></body></html>'''
 
+from __future__ import annotations
+
+def f(b: dinner_recipe) -> None:
+    pass
+
+
+class dinner_recipe():
+    pass
+
+
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
 # import ElementSoup, StringIO
-# tree = ElementSoup.parse(StringIO.StringIO('dinner_recipe'))
+# tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
 
 pantry = set(['olive oil', 'pesto'])
 for ingredient in tree.getiterator('tr'):
