@@ -3,5 +3,5 @@
 price_rubles = 2
 price_kopeck = 24
 goods = 15
-print('Сумма за ', goods, ' единиц товара: ', price_rubles * goods + price_kopeck * goods // 100, 'руб.',
-      price_kopeck * goods % 100, 'коп.')
+print('Сумма за ', goods, ' единиц товара: ', price_rubles * goods + price_kopeck * goods // 100,
+      'руб.', price_kopeck * goods % 100, 'коп.')
