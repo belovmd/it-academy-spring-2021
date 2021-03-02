@@ -2,12 +2,8 @@ import re
 
 print('Hello world!')
 
-name = input('What is your name?\n')
-print('Hi, %s.' % name)  # %s это спецификатор подстановки строки
-
 friends = ['john', 'pat', 'gary', 'michael']
-for i, name in enumerate(friends):  # Функция создаёт объект, генерирующий кортежи,
-    # состоящие из индекса элемента и самого этого элемента.
+for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
 parents, babies = (1, 1)
