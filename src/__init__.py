@@ -1,36 +1,28 @@
 import re
 
-# 1
 print('Hello world!')
 
-# 2
 name = input('What is your name?\n')
-print('Hi, %s.' % name) # %s это спецификатор подстановки строки
+print('Hi, %s.' % name)  # %s это спецификатор подстановки строки
 
-# 3
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):  # Функция создаёт объект, генерирующий кортежи,
     # состоящие из индекса элемента и самого этого элемента.
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
-# 4
 parents, babies = (1, 1)
 while babies < 100:
-    print ('This generation has {0} babies'.format(babies))
+    print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
 
-# 5
-def greet(name):
-    print('Hello', name)
+def greet(func_name):
+    print('Hello', func_name)
 
 
 greet('Jack')
 greet('Jill')
 greet('Bob')
-
-
-# 6
 
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
@@ -38,8 +30,6 @@ for test_string in ['555-1212', 'ILL-EGAL']:
     else:
         print(test_string, 'rejected')
 
-
-# 7
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
