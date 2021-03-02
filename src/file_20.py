@@ -12,7 +12,7 @@ dinner_recipe = '''<html><body><table>
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
 # import ElementSoup, StringIO
-# tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
+# tree = ElementSoup.parse(StringIO.StringIO('dinner_recipe'))
 
 pantry = set(['olive oil', 'pesto'])
 for ingredient in tree.getiterator('tr'):
