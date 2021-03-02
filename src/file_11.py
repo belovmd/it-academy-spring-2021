@@ -9,7 +9,7 @@ class BankAccount(object):
         self.balance -= amount
 
     def overdrawn(self):
-        return self.balance < 0 
+        return self.balance < 0
 
 
 my_account = BankAccount(15)
