@@ -1,5 +1,7 @@
+"""33 line"""
 import random
 
+guess = 0
 guesses_made = 0
 
 name = input('Hello! What is your name?\n')

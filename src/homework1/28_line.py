@@ -1,3 +1,4 @@
+"""20 line"""
 BOARD_SIZE = 8
 
 
@@ -5,17 +6,17 @@ class BailOut(Exception):
     pass
 
 
-def validate(queens):
-    left = right = col = queens[-1]
-    for r in reversed(queens[:-1]):
+def validate(queens1):
+    left = right = col = queens1[-1]
+    for r in reversed(queens1[:-1]):
         left, right = left - 1, right + 1
         if r in (left, col, right):
             raise BailOut
 
 
-def add_queen(queens):
+def add_queen(queens2):
     for i in range(BOARD_SIZE):
-        test_queens = queens + [i]
+        test_queens = queens2 + [i]
         try:
             validate(test_queens)
             if len(test_queens) == BOARD_SIZE:
