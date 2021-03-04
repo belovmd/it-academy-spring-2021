@@ -1,3 +1,6 @@
+import doctest
+
+
 def median(pool):
 
     """Statistical median to demonstrate doctest.
