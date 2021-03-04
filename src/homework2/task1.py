@@ -1,3 +1,14 @@
+
+'''
+1. Напишите программу, которая считает общую цену. Вводится M рублей и N копеек цена,
+а также количество S товара Посчитайте общую цену в рублях и копейках за L товаров.
+Пример:
+Input: Цена одной вещи 3 рубля 20 копеек, посчитать 3 предмета.
+Output: Общая цена 9 рублей 60 копеек
+Задачу поместите в файл task1.py в папке src/homework2.
+'''
+
+
 def calculate_total_price(*price):
     total_price = dict()
     total_price["рубли"] = 0
@@ -10,7 +21,8 @@ def calculate_total_price(*price):
             count_ruble = total_price["копейки"] // 100
             total_price["рубли"] += count_ruble
             total_price["копейки"] = total_price["копейки"] % 100
-    string_result = "Общая цена {} рублей {} копеек".format(total_price["рубли"],total_price["копейки"] )
+    string_result = "Общая цена {} рублей {} копеек".format(total_price["рубли"],
+                                                            total_price["копейки"])
     return string_result
 
 
