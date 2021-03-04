@@ -1,6 +1,3 @@
-import itertools
-
-
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
