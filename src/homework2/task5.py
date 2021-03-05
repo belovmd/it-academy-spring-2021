@@ -20,5 +20,5 @@ for i in range(n):
     elif i == 1:
         cur, prev = 1, 0
 
-    if i == n-1:
+    if i == n - 1:
         print('%s fibonacci number is: %s' % (n, cur))
