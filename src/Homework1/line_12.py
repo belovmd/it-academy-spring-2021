@@ -1,6 +1,5 @@
 class BankAccount(object):
 
-
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
 
@@ -12,6 +11,7 @@ class BankAccount(object):
 
     def overdrawn(self):
         return self.balance < 0
+
 
 my_account = BankAccount(15)
 my_account.withdraw(50)
