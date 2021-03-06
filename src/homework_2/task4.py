@@ -17,4 +17,5 @@ for i in my_string:
 
 print('Маленькие =', low, 'большие =', up)
 
+# вариант 2 на ваш выбор
 print('Большие', sum(map(str.isupper, my_string)), 'маленькие', sum(map(str.islower, my_string)))
