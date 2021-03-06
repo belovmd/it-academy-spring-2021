@@ -11,7 +11,7 @@ if not isinstance(n, int) or n <= 0:
     print('Not valid input number (int from 1 to ... is expected)')
     raise ValueError
 
-
+cur, prev = 0, 0
 for i in range(n):
     if i > 1:
         cur, prev = cur + prev, cur
