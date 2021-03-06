@@ -1,8 +1,10 @@
 import csv
 
+
 # need to define cmp function in Python 3
 def cmp(a, b):
     return (a > b) - (a < b)
+
 
 # write stocks data as comma-separated values
 with open('stocks.csv', 'w', newline='') as stocksFileW:
