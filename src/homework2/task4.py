@@ -10,7 +10,6 @@ in_str = 'Ab1cD e3fG Hij4 эюя'
 lower, upper = 0, 0
 
 for c in in_str:
-    code = ord(c)
     if ord('a') <= ord(c) <= ord('z'):
         lower += 1
     elif ord('A') <= ord(c) <= ord('Z'):
