@@ -2,7 +2,8 @@ my_string = input("Введите предложение: ").split()
 formatted_string = []
 for word in my_string:
     if word[len(word) - 1] == ',' or word[len(word) - 1] == '.' or word[len(word) - 1] == ':' \
-            or word[len(word) - 1] == '!' or word[len(word) - 1] == '?' or word[len(word) - 1] == '-':
+            or word[len(word) - 1] == '!' \
+    or word[len(word) - 1] == '?' or word[len(word) - 1] == '-':
         formatted_string.append(word[:-1])
     else:
         formatted_string.append(word)
