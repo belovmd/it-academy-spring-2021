@@ -6,17 +6,15 @@
 """
 
 
-in_str = 'Abгd d2пE Fgычk07дvXXyY zЯЯ'
-en_lower = 'etaoinshrdlcumwfgypbvkxjqz'   # lower en-letters in order of frequency
-en_upper = 'ETAOINSHRDLCUMWFGYPBVKXJQZ'   # upper en-letters in order of frequency
-lower_num = 0
-upper_num = 0
+in_str = 'Ab1cD e3fG Hij4 эюя'
+lower, upper = 0, 0
 
 for c in in_str:
-    if c in en_lower:
-        lower_num += 1
-    elif c in en_upper:
-        upper_num += 1
+    code = ord(c)
+    if ord('a') <= ord(c) <= ord('z'):
+        lower += 1
+    elif ord('A') <= ord(c) <= ord('Z'):
+        upper += 1
 
 print('Input string:', in_str)
-print('Number of upper en-letters: %s\nNumber of lower en-letters: %s' % (upper_num, lower_num))
+print('Number of upper en-letters: %s\nNumber of lower en-letters: %s' % (upper, lower))
