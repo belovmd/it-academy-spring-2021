@@ -13,7 +13,7 @@ def calculate_square(a, b, c):
     if not state:
         print("Current triangle does not exist")
         return 0
-    p = (a + b + c)/2
+    p = (a + b + c) / 2
     return (p * (p - a) * (p - b) * (p - c))**(1/2)
 
 

@@ -38,12 +38,3 @@ print("{} - {}".format(chislo1, check_paliandr(chislo1)))
 print("{} - {}".format(chislo2, check_paliandr(chislo2)))
 print("{} - {}".format(chislo3, check_paliandr(chislo3)))
 print("{} - {}".format(chislo4, check_paliandr(chislo4)))
-
-
-
-
-
-
-
-
-
