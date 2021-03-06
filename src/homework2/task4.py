@@ -1,5 +1,6 @@
 import re
 
+
 text = "Good апар morning апрапр Mr АБ рпап Jhonson апрпа"
 new_string = re.sub(r'[а-яёА-ЯЁ]', "", text)
 upper_chars = 0
@@ -11,5 +12,3 @@ for char in new_string:
         elif char.islower():
             lower_chars += 1
 print("Cтрочные буквы: {} \nПрописные буквы: {} \n".format(lower_chars, upper_chars))
-
-
