@@ -105,6 +105,5 @@ venv.bak/
 
 #additional
 .idea/
-.tox/
 .gitignore/
 src/__init__.py
