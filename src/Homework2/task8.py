@@ -30,6 +30,7 @@ def make_readable(seconds):
         hours_ = ''
         minutes_ = ''
         seconds_ = seconds
+
     if len(str(hours_)) == 2:
         hours = str(hours_)
     elif len(str(hours_)) == 1:
