@@ -59,7 +59,7 @@ print(make_readable(86399))
 print(make_readable(359999))
 
 
-""" Convert string to camel case 
+""" Convert string to camel case
 
 Examples
 "the-stealth-warrior" gets converted to "theStealthWarrior"
