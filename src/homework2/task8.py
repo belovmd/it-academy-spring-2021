@@ -21,7 +21,8 @@ def alphabet_position(text):
         (as a string)
     """
 
-    return ' '.join(str(ord(c) - ord('a') + 1) for c in text.lower() if ord('a') <= ord(c) <= ord('z'))
+    return ' '.join(
+        str(ord(c) - ord('a') + 1) for c in text.lower() if ord('a') <= ord(c) <= ord('z'))
 
 
 def unique_in_order(iterable):
