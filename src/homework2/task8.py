@@ -9,9 +9,9 @@ https://py.checkio.org/ , https://www.codewars.com,   https://www.hackerrank.com
 
 
 def alphabet_position(text):
-    """Replace With Alphabet Position (6 kyu)
-    https://www.codewars.com/kata/546f922b54af40e1e90001da/python
+    """Replace With Alphabet Position (6 kyu):
 
+    https://www.codewars.com/kata/546f922b54af40e1e90001da/python
     In this kata you are required to, given a string, replace every letter with its position in the
     alphabet. If anything in the text isn't a letter, ignore it and don't return it.
     "a" = 1, "b" = 2, etc.
@@ -26,8 +26,7 @@ def alphabet_position(text):
 
 
 def unique_in_order(iterable):
-    """Unique In Order (6 kyu)
-    https://www.codewars.com/kata/54e6533c92449cc251001667
+    """Unique In Order (6 kyu): https://www.codewars.com/kata/54e6533c92449cc251001667
 
     Implement the function unique_in_order which takes as argument a sequence and returns a list of
     items without any elements with the same value next to each other and preserving the original
@@ -42,8 +41,7 @@ def unique_in_order(iterable):
 
 
 def dir_reduc(arr):
-    """Directions Reduction (5 kyu)
-    https://www.codewars.com/kata/550f22f4d758534c1100025a
+    """Directions Reduction (5 kyu): https://www.codewars.com/kata/550f22f4d758534c1100025a
 
     Write a function dir_reduc which will take an array of strings and returns an array of strings
     with the needless directions removed (W<->E or S<->N side by side).
@@ -62,8 +60,7 @@ def dir_reduc(arr):
 
 
 def snail(matrix):
-    """Snail (4 kyu)
-    https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1
+    """Snail (4 kyu): https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1
 
     Given an n x n array, return the array elements arranged from outermost elements to the middle
     element, traveling clockwise.
