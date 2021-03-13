@@ -74,12 +74,14 @@ def snail(matrix):
     size = len(matrix)
     turns = size // 2 + size % 2
     res = []
+
     for turn in range(turns):
-        excluder = size % 2 * (turn + 1) // turns
+        corrector = size % 2 * (turn + 1) // turns  # 1 for the last turn on odd sizes, else 0
         res.extend(matrix[turn][turn: size - turn])
         res.extend([matrix[i][size - 1 - turn] for i in range(turn + 1, size - 1 - turn)])
-        res.extend(matrix[size - 1 - turn][-turn - 1: -size - 1 + excluder + turn: -1])
-        res.extend([matrix[i][turn] for i in range(size - 2 - turn, turn, -1)])
+        res.extend(reversed(matrix[size - 1 - turn][turn + corrector: size - turn]))
+        res.extend(reversed([matrix[i][turn] for i in range(turn + 1, size - 1 - turn)]))
+
     return res
 
 
