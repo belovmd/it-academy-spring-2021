@@ -1,5 +1,5 @@
 """
-            Scramblines
+            Scramblines - раздел string
 Complete the function scramble(str1, str2) that returns true if a portion
 of str1 characters can be rearranged to match str2, otherwise returns false.
 
@@ -18,7 +18,8 @@ scramble('katas', 'steak') ==> False
 
 """
 
-def scramble1(s1, s2):  # STDERR Execution Timed Out (12000 ms)
+
+def scramble1(s1, s2):   # STDERR Execution Timed Out (12000 ms)
     for char in s2:
         pos = s1.find(char)
         if pos == -1:
@@ -27,7 +28,7 @@ def scramble1(s1, s2):  # STDERR Execution Timed Out (12000 ms)
     return True
 
 
-def scramble2(s1, s2): # STDERR Execution Timed Out (12000 ms) =(
+def scramble2(s1, s2):   # STDERR Execution Timed Out (12000 ms) =(
     for char in s2:
         if not(char in s2):
             return False
@@ -38,7 +39,7 @@ def scramble2(s1, s2): # STDERR Execution Timed Out (12000 ms) =(
     return True
 
 
-def scramble(s1,s2): # STDERR Execution Timed Out (12000 ms) =(
+def scramble(s1, s2):   # STDERR Execution Timed Out (12000 ms) =(
     if set(s2).issubset(s1):
         if len(s2) == len(set(s2)):
             return True
