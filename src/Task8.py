@@ -193,31 +193,3 @@ def cakes(recipe, available):
         if not min_ or possible_quantity < min_:
             min_ = possible_quantity
     return min_
-
-
-"""
-Task 10
-
-Once upon a time, on a way through the old wild mountainous west,…
-… a man was given directions to go from one point to another.
-The directions were "NORTH", "SOUTH", "WEST", "EAST".
-Clearly "NORTH" and "SOUTH" are opposite, "WEST" and "EAST" too.
-Going to one direction and coming back the opposite direction right away is a needless effort.
-Since this is the wild west, with dreadfull weather and not much water,
-it's important to save yourself some energy, otherwise you might die of thirst!
-"""
-
-
-def dirReduc(arr):
-    i = 0
-    while i < len(arr) - 1:
-        if (arr[i] == 'NORTH' and arr[i + 1] == 'SOUTH' or
-                arr[i] == 'SOUTH' and arr[i + 1] == 'NORTH' or
-                arr[i] == 'WEST' and arr[i + 1] == 'EAST' or
-                arr[i] == 'EAST' and arr[i + 1] == 'WEST'):
-            arr.pop(i)
-            arr.pop(i)
-            i = 0
-        else:
-            i += 1
-    return arr
