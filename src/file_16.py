@@ -1,3 +1,5 @@
+# task_16
+
 BOARD_SIZE = 8
 
 
