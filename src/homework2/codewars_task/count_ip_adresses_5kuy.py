@@ -15,6 +15,7 @@ ips_between("20.0.0.10", "20.0.1.0")  ==  246
 
 ip2 = []
 
+
 def minus_pos(pos):
     global ip2
     if not ip2[pos]:

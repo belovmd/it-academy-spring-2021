@@ -30,13 +30,21 @@ Note that brackets may be round, square or curly and can also be nested. Index a
 find_last_pos = lambda lst_, chr_: len(lst_) - 1 - lst_[::-1].index(chr_)
 
 
+def replace_chars(chr_):
+    if chr_ in ["{", "["]:
+        return "("
+    elif chr_ in ["]", "}"]:
+        return ")"
+    return chr_
+
 def split_string_into_chr(str_):
     lst_ = list(str_)
     lst_of_element = []
     i = 0
     count_chars = 0
     while True:
-        if len(lst_) == i:
+        if len(lst_) == (i + 1):
+            lst_of_element.append(lst_[i])
             break
         if lst_[i].isupper() and lst_[i+1].islower():
             lst_of_element.append(lst_[i] + lst_[i+1])
@@ -54,27 +62,61 @@ def delete_other_symb(chr_):
     else:
         return False
 
-def add_digit_to_string(lst_, digit_):
-    pass
+def merge_molecule_and_digit(new_list):
+    i = 0
+    molecule_dict = dict()
+    while True:
+        if len(new_list) <= (i + 1):
+            if new_list[i-1].isdigit():
+                break
+            molecule_dict[new_list[i]] = 1
+            break
+        elif new_list[i + 1].isdigit():
+            molecule_dict[new_list[i]] = int(new_list[i + 1])
+            i += 2
+        else:
+            molecule_dict[new_list[i]] = 1
+            i += 1
+    return molecule_dict
 
 
-def brackets(symbl_lst, parentheses):
-    pattern_parenthrses = {"(":")", "{":"}", "[":"]"}
-    first_prnth = parentheses.pop(0)
-    pos_last_prnth = find_last_pos(parentheses, pattern_parenthrses[first_prnth])
-    last_prnth = parentheses.pop(pos_last_prnth)
-    first_sub_prnth = symbl_lst.index(first_prnth)
-    last_sub_prnth = find_last_pos(symbl_lst, last_prnth)
-    new_sub_list = symbl_lst[first_sub_prnth + 1 : last_sub_prnth]
-    print(new_sub_list)
-    if (symbl_lst[pos_last_prnth + 1]).isdigit():
-        pass
-
+def expand_breakets(lst_):
+    open_prnth_pos = lst_.index("(")
+    close_prnth_pos = lst_.index(")")
+    sub_lst_ = lst_[open_prnth_pos + 1 : close_prnth_pos]
+    count_open = sub_lst_.count("(") + 1
+    count_close = 1
+    previous_pos = 0
+    while count_open:
+        previous_pos = close_prnth_pos
+        close_prnth_pos = lst_.index(")", close_prnth_pos + 1)
+        count_close += 1
+        count_open = count_open + lst_[previous_pos + 1: close_prnth_pos].count("(")
+        count_open -= count_close
+        count_close = 0
+    return open_prnth_pos , close_prnth_pos -1
 
 def merge_number_to_char(str_):
     symbl_lst = split_string_into_chr(str_)
     parentheses = list(filter(delete_other_symb, symbl_lst))
-    brackets(symbl_lst, parentheses)
+    new_list = list(map(replace_chars, symbl_lst))
+    print(*new_list)
+    count = new_list.count("(")
+    if count == 0:
+        new_dict = merge_molecule_and_digit(new_list)
+        print(new_dict)
+    if count > 1:
+        pos = expand_breakets(new_list)
+        new_list.pop(pos[0])
+        new_list.pop(pos[1])
+        print(new_list)
+        pos = expand_breakets(new_list)
+        new_list.pop(pos[0])
+        new_list.pop(pos[1])
+        print(new_list)
+
+
+
 
 
 
