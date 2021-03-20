@@ -110,13 +110,11 @@ def merge_molecule_and_digit_expression(lst_, pos):
     lst_.pop(open_prnth)
     lst_.pop(close_prnth - 1)
     slice_lst = lst_[open_prnth : close_prnth - 1]
-    print(*slice_lst)
     if num != 0:
         slice_with_num = add_digit_to_slice(slice_lst, num)
         result_slice = lst_[: open_prnth] + slice_with_num + lst_[close_prnth : ] # проверить close_prnth может быть последним индексом. Проверка при дебаг
     else:
         result_slice = lst_.copy()
-    print(result_slice)
     return result_slice
 
 
@@ -156,6 +154,38 @@ def kostyl(lst_):
     return new_lst
 
 
+def calculate_repeat_molecule(lst_):
+    new_lst = []
+    pattern_lst = []
+    i = 0
+    while i < len(lst_):
+        if lst_.count(lst_[i]) > 1 and ( not lst_[i].isdigit()) and not(lst_[i] in pattern_lst):
+            z = 0
+            total_num = 0
+            pattern_lst.append(lst_[i])
+            while z < len(lst_):
+                if lst_[z] == lst_[i]:
+                    if (z + 1) < len(lst_) and lst_[z + 1].isdigit():
+                        total_num += int(lst_[z + 1])
+                        z += 2
+                        continue
+                    else:
+                        total_num += 1
+                        z += 1
+                        continue
+                z += 1
+            new_lst.append(lst_[i])
+            new_lst.append(str(total_num))
+            i += 1
+        elif (i - 1) > 0 and lst_[i - 1] in pattern_lst and lst_[i].isdigit():
+            i += 2
+        elif not lst_[i] in pattern_lst:
+            new_lst.append(lst_[i])
+            i += 1
+        else:
+            i += 1
+    return new_lst
+
 
 def merge_number_to_char(str_):
     symbl_lst = split_string_into_chr(str_)
@@ -168,9 +198,19 @@ def merge_number_to_char(str_):
     while count > 0:
         pos = expand_breakets(new_list)
         new_list = merge_molecule_and_digit_expression(new_list, pos)
-        new_list = kostyl(new_list)
+        new_list = kostyl(new_list)  #Костыль. Появлялись посторяющиеся числа.
         count -= 1
+    new_list = calculate_repeat_molecule(new_list)
     return merge_molecule_and_digit(new_list)
+
+
+def print_molecule_to_atoms():
+    print("\n", "-" * 40)
+    print("\t\tTask5: Molecule to atoms - 5kuy")
+    print("Mg(OH)MgCa[CaO]2 =>", merge_number_to_char("Mg(OH)2MgCa2[CaO]2"))
+    print("Mg(OH)2=>", merge_number_to_char("Mg(OH)2"))
+    print("C2(OH)2{MgCa}[CaO]2 =>", merge_number_to_char("C2(OH)2{MgCa}2[CaO]2"))
+    print("-" * 40)
 
 
 
