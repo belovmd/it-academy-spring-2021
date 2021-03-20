@@ -15,4 +15,3 @@ a, b, c = ('a', 2, 'python')  # task3
 tuple_for_task4 = ([1, 2, 3], )
 
 print(len(tuple_for_task4))
-
