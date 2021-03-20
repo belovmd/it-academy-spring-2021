@@ -14,7 +14,7 @@ lst = input_str.split()
 counter = 0
 
 for i in range(len(lst)):
-    for j in range(i+1, len(lst)):
+    for j in range(i + 1, len(lst)):
         if lst[i] == lst[j]:
             counter += 1
 
