@@ -9,11 +9,12 @@
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 """
 
-lst = [1, 2, 3, 5, 5, 2]
+input_str = input()
+lst = input_str.split()
 repetitive = []
 
 for element in lst:
     if lst.count(element) > 1 and element not in repetitive:
         repetitive.append(element)
 
-print(*repetitive)
+print(len(repetitive))
