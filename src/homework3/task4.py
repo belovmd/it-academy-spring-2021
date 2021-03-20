@@ -11,10 +11,11 @@
 
 input_str = input()
 lst = input_str.split()
-repetitive = []
+counter = 0
 
-for element in lst:
-    if lst.count(element) > 1 and element not in repetitive:
-        repetitive.append(element)
+for i in range(len(lst)):
+    for j in range(i+1, len(lst)):
+        if lst[i] == lst[j]:
+            counter += 1
 
-print(len(repetitive))
+print(counter)
