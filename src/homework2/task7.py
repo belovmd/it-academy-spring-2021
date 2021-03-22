@@ -14,7 +14,7 @@ def calculate_square(a, b, c):
         print("Current triangle does not exist")
         return 0
     p = (a + b + c) / 2
-    return (p * (p - a) * (p - b) * (p - c))**(1/2)
+    return (p * (p - a) * (p - b) * (p - c))**(1 / 2)
 
 
 print("Square {:.4f}".format(calculate_square(3, 10, 9)))

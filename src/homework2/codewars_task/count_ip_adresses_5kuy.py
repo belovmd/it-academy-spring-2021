@@ -34,9 +34,7 @@ def ips_between(start, end):
     global ip2
     ip1 = list(map(lambda x: int(x), start.split(".")))
     ip2 = list(map(lambda x: int(x), end.split(".")))
-    digit = 0
     raznost = 0
-    pos = 0
     for i in range(3, -1, -1):
         if ip1[i] != ip2[i]:
             if ip1[i] > ip2[i]:
@@ -61,30 +59,3 @@ def print_count_ip_adresses():
     print("61.124.191.224 and 61.124.191.229, Expecting:{}".format(
         ips_between("61.124.191.224", "61.124.191.229")))
     print("-" * 40)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

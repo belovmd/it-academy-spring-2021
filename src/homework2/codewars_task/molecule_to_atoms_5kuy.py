@@ -26,10 +26,6 @@ Note that brackets may be round, square or curly and can also be nested. Index a
 """
 
 
-
-find_last_pos = lambda lst_, chr_: len(lst_) - 1 - lst_[::-1].index(chr_)
-
-
 def replace_chars(chr_):
     if chr_ in ["{", "["]:
         return "("
@@ -85,7 +81,7 @@ def merge_molecule_and_digit(new_list):
 def expand_breakets(lst_):
     open_prnth_pos = lst_.index("(")
     close_prnth_pos = lst_.index(")")
-    sub_lst_ = lst_[open_prnth_pos + 1 : close_prnth_pos]
+    sub_lst_ = lst_[open_prnth_pos + 1: close_prnth_pos]
     count_open = sub_lst_.count("(") + 1
     count_close = 1
     previous_pos = 0
@@ -109,10 +105,10 @@ def merge_molecule_and_digit_expression(lst_, pos):
         num = 0
     lst_.pop(open_prnth)
     lst_.pop(close_prnth - 1)
-    slice_lst = lst_[open_prnth : close_prnth - 1]
+    slice_lst = lst_[open_prnth: close_prnth - 1]
     if num != 0:
         slice_with_num = add_digit_to_slice(slice_lst, num)
-        result_slice = lst_[: open_prnth] + slice_with_num + lst_[close_prnth : ] # проверить close_prnth может быть последним индексом. Проверка при дебаг
+        result_slice = lst_[: open_prnth] + slice_with_num + lst_[close_prnth:]
     else:
         result_slice = lst_.copy()
     return result_slice
@@ -122,7 +118,7 @@ def add_digit_to_slice(slice_lst, num):
     open_prnth, close_prnth = 0, 0
     new_lst = []
     if slice_lst.count("("):
-        open_prnth, close_prnth  = expand_breakets(slice_lst)
+        open_prnth, close_prnth = expand_breakets(slice_lst)
     i = 0
     while i < len(slice_lst):
         if open_prnth and i in range(open_prnth, close_prnth + 1):
@@ -136,7 +132,7 @@ def add_digit_to_slice(slice_lst, num):
             i += 2
         else:
             new_lst.append(str(num))
-            i += 1      #мб прорустил new_lst.append(num). Посмотреть при отладке
+            i += 1      # мб прорустил new_lst.append(num). Посмотреть при отладке
     return new_lst
 
 
@@ -144,7 +140,7 @@ def kostyl(lst_):
     i = 0
     new_lst = []
     while i < len(lst_):
-        if (i + 1) < len(lst_) and lst_[i].isdigit() and lst_[i + 1].isdigit() :
+        if (i + 1) < len(lst_) and lst_[i].isdigit() and lst_[i + 1].isdigit():
             new_num = int(lst_[i]) * int(lst_[i + 1])
             new_lst.append(str(new_num))
             i += 2
@@ -159,7 +155,7 @@ def calculate_repeat_molecule(lst_):
     pattern_lst = []
     i = 0
     while i < len(lst_):
-        if lst_.count(lst_[i]) > 1 and ( not lst_[i].isdigit()) and not(lst_[i] in pattern_lst):
+        if lst_.count(lst_[i]) > 1 and (not lst_[i].isdigit()) and not(lst_[i] in pattern_lst):
             z = 0
             total_num = 0
             pattern_lst.append(lst_[i])
@@ -198,7 +194,7 @@ def merge_number_to_char(str_):
     while count > 0:
         pos = expand_breakets(new_list)
         new_list = merge_molecule_and_digit_expression(new_list, pos)
-        new_list = kostyl(new_list)  #Костыль. Появлялись посторяющиеся числа.
+        new_list = kostyl(new_list)  # Костыль. Появлялись посторяющиеся числа.
         count -= 1
     new_list = calculate_repeat_molecule(new_list)
     return merge_molecule_and_digit(new_list)

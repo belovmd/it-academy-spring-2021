@@ -83,11 +83,9 @@ def print_merged_string_checker():
     print("\n", "-" * 40)
     print("\t\tTask4: Merged String Checker - 5kuy\n")
     print("s:{} \npart1: {} \npart2{} \nresult => {}\n".format("Can we merge it? No, we can't",
-                                                "Can merget? scn"," we iYe, we a!",
-                                                is_merge("Can we merge it? No, we can't",
-                                                         "Can merget? scn", " we iYe, we a!", )))
+                                                                "Can merget? scn"," we iYe, we a!",
+                                                                is_merge("Can we merge it? No, we can't",
+                                                                "Can merget? scn", " we iYe, we a!", )))
     print("s:{} \npart1: {} \npart2{} \nresult => {}\n".format("codewars", "cdw", "oears",
-                                                             is_merge("codewars", "cdw", "oears")))
+                                                                is_merge("codewars", "cdw", "oears")))
     print("-" * 40)
-
-

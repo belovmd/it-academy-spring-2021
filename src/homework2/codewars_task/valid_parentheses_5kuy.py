@@ -56,7 +56,7 @@ def valid_parentheses(string):
 
 
 def print_valid_parentheses():
-    print("\n","-" * 40)
+    print("\n", "-" * 40)
     print("\t\tTask1: Valid Parentheses - 5kuy")
     print("gfhfgh)(fghgj())3423)gfh", "=>", valid_parentheses("gfhfgh)(fghgj())3423)gfh"))
     print("rhiccn(bem(qkedw(nmhnf(skcwov))eowlcfyaeih", "=>",

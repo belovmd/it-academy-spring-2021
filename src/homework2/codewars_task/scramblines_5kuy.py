@@ -24,7 +24,7 @@ def scramble1(s1, s2):   # STDERR Execution Timed Out (12000 ms)
         pos = s1.find(char)
         if pos == -1:
             return False
-        s1 = s1[:pos] + s1[pos+1:]
+        s1 = s1[:pos] + s1[pos + 1:]
     return True
 
 
@@ -56,5 +56,3 @@ def print_scramble():
     print("rkqodlw and world =>", scramble("rkqodlw", "world"))
     print("katas and steak =>", scramble("katas", "steak"))
     print("-" * 40)
-
-
