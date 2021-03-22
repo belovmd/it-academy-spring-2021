@@ -4,7 +4,7 @@
 a = 40
 b = 60
 c = 80
-p = (a + b + c)/2  # for Square
+p = (a + b + c) / 2  # for Square
 
 if (b - c) < a < (b + c):
     if (a - c) < b < (a + c):
