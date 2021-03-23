@@ -8,9 +8,9 @@
 my_str = input().split(' ')
 my_str2 = []
 for i in my_str:
-    x = my_str.count(i)-1
+    x = my_str.count(i) - 1
     my_str2.append(x)
-    z = sum(my_str2)//2
+    z = sum(my_str2) // 2
 print(z)
 
 # Сокращение
