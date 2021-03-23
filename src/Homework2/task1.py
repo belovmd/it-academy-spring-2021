@@ -1,7 +1,7 @@
 rubles, penny = (
     int(input('Введите количество рублей ')),
     int(input('Введите количество копеек ')))
-total = (rubles*100 + penny) * 3
+total = (rubles * 100 + penny) * 3
 rubles = total // 100
 penny = total % 100
 tenths_r = rubles % 10
@@ -20,4 +20,4 @@ elif 1 < tenths_p < 5 and not 11 < hundredths_p < 15:
     ending_penny = 'йки'
 else:
     ending_penny = 'ек'
-print('Общая цена: ', rubles, 'рубл'+ending_rubles, penny, 'копе'+ending_penny)
+print('Общая цена: ', rubles, 'рубл' + ending_rubles, penny, 'копе' + ending_penny)
