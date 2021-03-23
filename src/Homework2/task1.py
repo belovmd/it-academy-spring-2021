@@ -1,6 +1,6 @@
 rubles, penny = (
-    int(input('Введите количество рублей ')),
-    int(input('Введите количество копеек ')))
+    int(input('Введите количество рублей: ')),
+    int(input('Введите количество копеек: ')))
 total = (rubles * 100 + penny) * 3
 rubles = total // 100
 penny = total % 100
