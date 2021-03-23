@@ -1,0 +1,21 @@
+"""
+Найти самое длинное слово в введенном предложении.
+Учтите что в предложении есть знаки препинания.
+"""
+
+sentence = str(input('Введите предложение со знаками препинания:'))
+
+punctuation = ['(', ')', '?', ':', ';', ',', '.', '!', '/', '"', "'"]
+
+# Удаление знаков препинания в строке
+for symbol in punctuation:
+    sentence = sentence.replace(symbol, ' ')
+
+# Поиск самого длинного слова
+words = sentence.split(' ')
+longest_word = ''
+
+for word in words:
+    if len(word) > len(longest_word):
+        longest_word = word
+print('Самое длинное слово', longest_word)
