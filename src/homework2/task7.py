@@ -11,7 +11,7 @@ c = float(input('Введите третью сторону треугольни
 
 if a + b > c and b + c > a and c + a > b:
     perimeter = float((a + b + c) / 2)
-    square = math.sqrt(perimeter * (perimeter - a) * (perimeter - b) * (perimeter - c))  # или ** 0.5
+    square = math.sqrt(perimeter * (perimeter - a) * (perimeter - b) * (perimeter - c))  # или **0.5
     print('Стороны определяют треугольник с площадью: ', square)
 else:
     print('Неверные входные данные')
