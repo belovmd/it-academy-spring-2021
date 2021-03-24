@@ -7,10 +7,12 @@
 Распечатайте полученный список.
 """
 
-lst = [1, 3, 0, 5, 0, 7, 0, 3]
-
-for index in range(len(lst) - 1):
+lst = [1, 3, 0, 5, 0, 0, 7, 0, 3]
+index = len(lst) - 1
+while index > 0:
     if not lst[index]:
         lst.append(lst.pop(index))
+    index -= 1
+
 
 print(lst)
