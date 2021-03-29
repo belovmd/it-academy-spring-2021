@@ -1,3 +1,5 @@
+"""Homework2 - task4"""
+
 some_string = "Explicit is better, than Implicit."
 counter_big_letters = 0
 counter_small_letters = 0

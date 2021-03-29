@@ -1,3 +1,5 @@
+"""Homework2 - task6"""
+
 input_number = int(input("Input number: "))
 straight_number = input_number
 reverse_number = 0

@@ -1,3 +1,5 @@
+"""Homework2 - task3"""
+
 input_string = "abc cde def def abc"
 new_string = ""
 

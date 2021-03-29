@@ -1,3 +1,5 @@
+"""Homework2 - task7"""
+
 a = float(input("Side a = "))
 b = float(input("Side b = "))
 c = float(input("Side c = "))

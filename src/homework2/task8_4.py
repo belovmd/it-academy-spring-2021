@@ -1,3 +1,5 @@
+"""Homework2 - task8_4"""
+
 """
 Collect|
 Let us consider this example (array written in general format):
@@ -32,6 +34,7 @@ Please ask before translating.
 """
 
 lst = [744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358]
+
 result_lst = [sum(lst)]
 for index in range(0, len(lst)):
     sum(lst) - lst[0]

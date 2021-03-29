@@ -1,3 +1,5 @@
+"""Homework2 - task5"""
+
 fib_number = int(input("Input number of Fibonacci: "))
 first_fib = 0
 second_fib = 1

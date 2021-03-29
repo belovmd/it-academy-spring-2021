@@ -1,3 +1,5 @@
+"""Homework2 - task1"""
+
 rubles = int(input())
 penny = int(input())
 goods_amount = int(input())
