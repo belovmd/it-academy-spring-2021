@@ -1,6 +1,5 @@
 """Homework 3 - Task 4"""
 
-
 from math import factorial
 
 
