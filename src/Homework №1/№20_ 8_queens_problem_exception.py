@@ -29,5 +29,6 @@ def add_queen(queens_number):
 
 
 queens = add_queen([])
+
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))

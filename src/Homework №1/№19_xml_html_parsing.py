@@ -1,5 +1,6 @@
-import xml.etree.ElementTree as Etree
 # task №19: "XML/HTML parsing"
+import xml.etree.ElementTree as Etree
+
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -16,6 +17,7 @@ tree = Etree.fromstring(dinner_recipe)
 # tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
 
 pantry = {'olive oil', 'pesto'}
+
 for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:

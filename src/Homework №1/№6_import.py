@@ -1,7 +1,6 @@
 # task №6: "Import, regular expressions"
 import re
 
-
 for test_string in ['555-1212', 'ILLEGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
