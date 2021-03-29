@@ -1,5 +1,6 @@
 """Homework1 - 20 lines"""
 
+
 import itertools
 
 

@@ -1,5 +1,6 @@
 """Homework1 - 28 lines"""
 
+
 BOARD_SIZE = 8
 
 

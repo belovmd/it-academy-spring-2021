@@ -1,5 +1,6 @@
 """Homework1 - 5 lines"""
 
+
 def greet(name):
     print('Hello', name)
 

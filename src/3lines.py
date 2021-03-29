@@ -1,5 +1,6 @@
 """Homework1 - 3 lines"""
 
+
 friends = ['john', 'pat', 'gary', 'michael']
 
 

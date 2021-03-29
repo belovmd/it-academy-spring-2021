@@ -1,5 +1,6 @@
 """Homework1 - 6 lines"""
 
+
 import re
 
 for test_string in ['555-1212', 'ILL-EGAL']:
