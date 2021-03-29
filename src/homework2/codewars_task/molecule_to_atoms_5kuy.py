@@ -38,13 +38,12 @@ def split_string_into_chr(str_):
     lst_ = list(str_)
     lst_of_element = []
     i = 0
-    count_chars = 0
     while True:
         if len(lst_) == (i + 1):
             lst_of_element.append(lst_[i])
             break
-        if lst_[i].isupper() and lst_[i+1].islower():
-            lst_of_element.append(lst_[i] + lst_[i+1])
+        if lst_[i].isupper() and lst_[i + 1].islower():
+            lst_of_element.append(lst_[i] + lst_[i + 1])
             i += 2
         else:
             lst_of_element.append(lst_[i])
@@ -185,7 +184,6 @@ def calculate_repeat_molecule(lst_):
 
 def merge_number_to_char(str_):
     symbl_lst = split_string_into_chr(str_)
-    parentheses = list(filter(delete_other_symb, symbl_lst))
     new_list = list(map(replace_chars, symbl_lst))
     count = new_list.count("(")
     if count == 0:
