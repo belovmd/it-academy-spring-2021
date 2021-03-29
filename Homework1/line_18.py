@@ -1,6 +1,9 @@
+# Task1 - 18 line
+
 BOARD_SIZE = 8
 
 
+# PEP 8: E302 expected 2 blank lines
 def under_attack(col, queens):
     left = right = col
 
@@ -12,6 +15,7 @@ def under_attack(col, queens):
     return False
 
 
+# PEP 8: E302 expected 2 blank lines
 def solve(n):
     if n == 0:
         return [[]]

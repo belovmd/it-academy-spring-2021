@@ -1,3 +1,5 @@
+# Task1 - 20 line
+
 import itertools
 
 

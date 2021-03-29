@@ -1,3 +1,5 @@
+# Task1 - 7 line
+
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
