@@ -1,3 +1,5 @@
+"""Homework1 - 14 lines"""
+
 def median(pool):
 
     """Statistical median to demonstrate doctest.

@@ -1,3 +1,5 @@
+"""Homework1 - 21 lines"""
+
 # From http://effbot.org/zone/element-index.htm
 import xml.etree.ElementTree as eTree
 

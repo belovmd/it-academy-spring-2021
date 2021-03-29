@@ -1,3 +1,5 @@
+"""Homework1 - 15 lines"""
+
 from itertools import groupby
 
 lines = '''

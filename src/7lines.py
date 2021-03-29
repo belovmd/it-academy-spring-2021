@@ -1,3 +1,5 @@
+"""Homework1 - 7 lines"""
+
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,

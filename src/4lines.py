@@ -1,3 +1,5 @@
+"""Homework1 - 4 lines"""
+
 parents, babies = (1, 1)
 
 

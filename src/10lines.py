@@ -1,3 +1,5 @@
+"""Homework1 - 10 lines"""
+
 from time import localtime
 
 activities = {8: 'Sleeping',
