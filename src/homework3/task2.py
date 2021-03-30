@@ -19,5 +19,3 @@ modified_lst = list.copy(generated_lst2)
 modified_lst.insert(1, "2a")
 print(generated_lst2)
 print(modified_lst)
-
-

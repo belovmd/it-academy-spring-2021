@@ -13,4 +13,3 @@ for index in range(1, 101):
         print("Buzz")
     else:
         print(index)
-

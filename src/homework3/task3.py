@@ -18,4 +18,3 @@ tpl_2 = ([1, 2, 3],)
 for index in tpl_2[0]:
     print(index)
 print(len(tpl_2))
-
