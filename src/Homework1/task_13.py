@@ -2,6 +2,7 @@
 
 import unittest
 
+
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
