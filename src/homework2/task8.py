@@ -85,3 +85,39 @@ def valid_parentheses(string):
         return True
     else:
         return False
+
+
+def sum_pairs(ints, s):
+    """Sum of Pairs
+
+    Given a list of integers and a single sum value,
+    return the first two values
+    (parse from the left please) in order of
+    appearance that add up to form the sum.
+    """
+    set_ = set(ints)
+    lst_ = []
+    res = {}
+    for i in set_:
+        for j in set_:
+            if i + j == s:
+                if not lst_.count([i, j]):
+                    lst_.append([i, j])
+
+    if lst_:
+        for a, b in lst_:
+            index_a = ints.index(a)
+            index_b = ints.index(b)
+            if a != b:
+                if index_a != index_b:
+                    if index_a < index_b:
+                        res[index_b - index_a] = [a, b]
+                    else:
+                        res[index_a - index_b] = [b, a]
+            elif a == b and ints.count(a) > 1:
+                res[ints[index_a + 1:].index(a) - index_a] = [a, a]
+
+    if res:
+        return res[min(res.keys())]
+    else:
+        return None
