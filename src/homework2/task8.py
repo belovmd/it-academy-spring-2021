@@ -17,8 +17,7 @@ def presses(phrase):
 
 
 def move_zeros(array):
-    """
-    Moving Zeros To The End
+    """Moving Zeros To The End
 
     Write an algorithm that takes an array and
     moves all of the zeros to the end,
@@ -28,8 +27,7 @@ def move_zeros(array):
 
 
 def make_readable(seconds):
-    """
-    Human Readable Time
+    """Human Readable Time
 
     Write a function, which takes a non-negative integer (seconds)
     as input and returns the time in a human-readable format (HH:MM:SS)
@@ -44,8 +42,7 @@ def make_readable(seconds):
 
 
 def alphabet_position(text):
-    """
-    Replace With Alphabet Position
+    """Replace With Alphabet Position
 
     In this kata you are required to,
     given a string,
@@ -65,8 +62,7 @@ def alphabet_position(text):
 
 
 def valid_parentheses(string):
-    """
-    Valid Parentheses
+    """Valid Parentheses
 
     Write a function that takes a string of parentheses,
     and determines if the order of the parentheses is valid.
