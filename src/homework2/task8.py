@@ -1,9 +1,3 @@
-"""
-My solutions on
-http://codewars.com
-"""
-
-
 def presses(phrase):
     """
     Multi-tap Keypad Text Entry on an Old Mobile Phone
