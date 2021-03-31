@@ -1,6 +1,5 @@
 def presses(phrase):
-    """
-    Multi-tap Keypad Text Entry on an Old Mobile Phone
+    """Multi-tap Keypad Text Entry on an Old Mobile Phone
 
     Prior to having fancy iPhones,
     teenagers would wear out their thumbs sending SMS messages on
