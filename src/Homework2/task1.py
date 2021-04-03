@@ -4,8 +4,9 @@
 # Пример: Input: Цена одной вещи 3 рубля 20 копеек, посчитать 3 предмета.
 # Output: Общая цена 9 рублей 60 копеек.
 
-rubles, pennies, goods = [int(num) for num in input("Введите рубли, копейки и "
-                                   "количество товара через пробел: ").split()]
+rubles, pennies, goods = [int(el) for el in input("Введите рубли, копейки и " \
+                                                  "количество товара через" \
+                                                  " пробел: ").split()]
 
 sum_rubles = rubles * goods + ((pennies * goods) // 100)
 sum_pennies = pennies * goods % 100
