@@ -7,11 +7,11 @@ class BankAccount(object):
     def deposit(self, amount):
         self.balance += amount
 
-    def overdrawn(self):
-        return self.balance < 0
-
     def withdraw(self, amount):
         self.balance -= amount
+
+    def overdrawn(self):
+        return self.balance < 0
 
 
 my_account = BankAccount(15)
