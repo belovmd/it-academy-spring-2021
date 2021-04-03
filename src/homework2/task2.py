@@ -1,8 +1,12 @@
-"""Найти самое длинное слово в введенном предложении. Учтите что в предложении есть знаки препинания."""
+"""Найти самое длинное слово в введенном предложении.
+
+Учтите что в предложении есть знаки препинания.
+"""
 
 
 def find_max_word(str_):
-    formatted_string = "".join(letter for letter in str_ if letter.isalpha() or letter.isspace() or letter.isdigit())
+    formatted_string = "".join(letter for letter in str_
+                               if letter.isalpha() or letter.isspace() or letter.isdigit())
     lst = formatted_string.split()
     big_word = lst[0]
     for word in lst:
