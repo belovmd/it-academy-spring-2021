@@ -1,14 +1,14 @@
-n = int(input("Введите целое число: "))
-n2 = n
-p = 0
+number = int(input("Введите целое число: "))
+number2 = number
+finish_number = 0
 
-while n2 > 0:
-    itr = n2 % 10
-    n2 = n2 // 10
-    p = p * 10
-    p = p + itr
+while number2 > 0:
+    itr = number2 % 10
+    number2 = number2 // 10
+    finish_number = finish_number * 10
+    finish_number = finish_number + itr
 
-if n == p:
+if number == finish_number:
     print('палиндром')
 
 else:
