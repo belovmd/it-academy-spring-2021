@@ -1,9 +1,10 @@
 import re
 
 
-text = ("2. Найти самое длинное слово в введенном предложении. Учтите что в "
+text = ("2. Найти самое длинное:: слово в  введенном предложении. Учтите что в "
         "предложении есть знаки препинания.")
-string_list = re.split(r"[ ,:;.-]+", text)
+string_list = re.split(r"\W+", text)
+print(string_list)
 max_length = len(string_list[0])
 result_string = None
 for current_string in string_list:

@@ -1,7 +1,6 @@
 text = "abcd if aa aaa aaa aa"
 list_chars = text.replace(" ", "")
 i = 0
-i = 0
 new_str = ""
 while i < len(list_chars):
     if i == 0:

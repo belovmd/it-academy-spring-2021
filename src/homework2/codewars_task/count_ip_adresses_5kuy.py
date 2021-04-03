@@ -13,11 +13,8 @@ ips_between("10.0.0.0", "10.0.1.0")   ==  256
 ips_between("20.0.0.10", "20.0.1.0")  ==  246
 """
 
-ip2 = []
 
-
-def minus_pos(pos):
-    global ip2
+def minus_pos(ip2, pos):
     if not ip2[pos]:
         if not ip2[pos - 1]:
             ip2[pos - 2] -= 1
@@ -31,7 +28,6 @@ def minus_pos(pos):
 
 
 def ips_between(start, end):
-    global ip2
     ip1 = list(map(lambda x: int(x), start.split(".")))
     ip2 = list(map(lambda x: int(x), end.split(".")))
     raznost = 0
@@ -39,7 +35,7 @@ def ips_between(start, end):
         if ip1[i] != ip2[i]:
             if ip1[i] > ip2[i]:
                 raznost += ((256 + ip2[i]) - ip1[i]) * 256 ** (3 - i)
-                minus_pos(i - 1)
+                minus_pos(ip2, i - 1)
             elif ip1[i] < ip2[i]:
                 raznost += (ip2[i] - ip1[i]) * 256 ** (3 - i)
     return raznost

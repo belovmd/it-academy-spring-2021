@@ -2,23 +2,19 @@ def fib_number_calculate(n):
     if n < 0 and isinstance(n, float):
         print("Exception :: wrong number")
         return
-    fib_number_1 = 0
-    fib_number_2 = 0
-    result = 0
+    fib_number_1, fib_number_2 = 0, 0
     i = 0
     while i <= n:
-        if i == 0:
-            result = fib_number_1 = 0
+        if not i:
+            fib_number_1 = 0
             i += 1
         elif i == 1:
-            result = fib_number_2 = 1
+            fib_number_2 = 1
             i += 1
         else:
-            result = fib_number_1 + fib_number_2
-            fib_number_1 = fib_number_2
-            fib_number_2 = result
+            fib_number_2, fib_number_1 = fib_number_1 + fib_number_2, fib_number_2
             i += 1
-    return result
+    return fib_number_2
 
 
 for i in range(10):

@@ -9,6 +9,16 @@ Output: Общая цена 9 рублей 60 копеек
 '''
 
 
+def calculate_price(rubels, cents, count_of_things):
+    count_of_rubels = rubels * count_of_things + (cents * count_of_things) // 100
+    count_of_cents = (cents * count_of_things) % 100
+    return count_of_rubels, count_of_cents
+
+
+rubels, cents = calculate_price(3, 20, 3)
+print("Рубли: {} \nКопейки: {}".format(rubels, cents))
+
+'''
 def calculate_total_price(*price):
     total_price = dict()
     total_price["рубли"] = 0
@@ -38,3 +48,4 @@ p1 = "3 рубля 20 копеек"
 p3 = "3 рубля 20 копеек"
 p5 = "3 рубля 20 копеек"
 print(calculate_total_price(p1, p3, p5))
+'''
