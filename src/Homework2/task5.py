@@ -4,10 +4,8 @@
 number = int(input("Введите n-ое число Фибоначчи: "))
 f_num1, f_num2, counter = 0, 1, 0
 
-while counter != number - 2:
-    f_variable = f_num1 + f_num2
-    f_num1 = f_num2
-    f_num2 = f_variable
+while counter != number:
+    f_num1, f_num2  = f_num1 + f_num2, f_num1
     counter += 1
 
 print(number, "число в последовательности Фибоначчи —", f_num2)
