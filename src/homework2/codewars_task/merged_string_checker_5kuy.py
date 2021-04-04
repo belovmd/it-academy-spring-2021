@@ -26,11 +26,11 @@ def compare_chars(s, part1, part2):
 
 
 def compare_sequence_of_chars_simple(s, part1, part2):
-    for chr in s:
-        if part1 and chr == part1[0]:
+    for chr_ in s:
+        if part1 and chr_ == part1[0]:
             part1 = part1[1:]
             continue
-        if part2 and chr == part2[0]:
+        if part2 and chr_ == part2[0]:
             part2 = part2[1:]
             continue
         return False

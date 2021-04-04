@@ -18,8 +18,6 @@ scramble('katas', 'steak') ==> False
 
 """
 
-import collections
-
 
 def scramble1(s1, s2):   # STDERR Execution Timed Out (12000 ms)
     for char in s2:

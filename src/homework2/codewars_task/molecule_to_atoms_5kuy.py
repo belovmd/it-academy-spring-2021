@@ -64,7 +64,7 @@ def merge_molecule_and_digit(new_list):
     molecule_dict = dict()
     while True:
         if len(new_list) <= (i + 1):
-            if new_list[i-1].isdigit():
+            if new_list[i - 1].isdigit():
                 break
             molecule_dict[new_list[i]] = 1
             break
@@ -154,7 +154,8 @@ def calculate_repeat_molecule(lst_):
     pattern_lst = []
     i = 0
     while i < len(lst_):
-        if lst_.count(lst_[i]) > 1 and (not lst_[i].isdigit()) and not(lst_[i] in pattern_lst):
+        if lst_.count(lst_[i]) > 1 and (not lst_[i].isdigit()) \
+                and not(lst_[i] in pattern_lst):
             z = 0
             total_num = 0
             pattern_lst.append(lst_[i])
@@ -205,13 +206,3 @@ def print_molecule_to_atoms():
     print("Mg(OH)2=>", merge_number_to_char("Mg(OH)2"))
     print("C2(OH)2{MgCa}[CaO]2 =>", merge_number_to_char("C2(OH)2{MgCa}2[CaO]2"))
     print("-" * 40)
-
-
-
-
-
-
-
-
-
-
