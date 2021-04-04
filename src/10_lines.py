@@ -1,3 +1,5 @@
+# Task10 - 10 line
+
 from time import localtime
 
 activities = {8: 'Sleeping',

@@ -1,3 +1,4 @@
+# Task28 - 28 line
 BOARD_SIZE = 8
 
 
