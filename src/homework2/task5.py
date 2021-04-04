@@ -15,8 +15,6 @@ else:
     f2 = 1
     i = 2
     while i < n:
-        fib = f1 + f2
-        f1 = f2
-        f2 = fib
+        f1, f2 = f2, f1 + f2
         i = i + 1
-    print('Ответ : ', fib)
+    print('Ответ : ', f2)

@@ -7,14 +7,7 @@
 
 my_str = input('Введите строку : ')
 
-s = 0
-p = 0
+lowercase_counter = len([ch_ for ch_ in my_str if 'a' <= ch_ <= 'z'])
+uppercase_counter = len([ch_ for ch_ in my_str if 'A' <= ch_ <= 'Z'])
 
-for i in my_str:
-    if 'a' <= i <= 'z':
-        p += 1
-    if 'A' <= i <= 'Z':
-        s += 1
-
-print('Строчных : ', s)
-print('Прописных : ', p)
+print('Строчных : {}. Прописных : {}'.format(lowercase_counter, uppercase_counter))
