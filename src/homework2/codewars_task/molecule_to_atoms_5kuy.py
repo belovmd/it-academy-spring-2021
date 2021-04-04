@@ -91,8 +91,8 @@ def expand_breakets(lst_):
         previous_pos = close_prnth_pos
         close_prnth_pos = lst_.index(")", close_prnth_pos + 1)
         count_close += 1
-        count_open = count_open + lst_[
-                                  previous_pos + 1: close_prnth_pos].count("(")
+        count_open = count_open + lst_[previous_pos + 1: close_prnth_pos]\
+            .count("(")
         count_open -= count_close
         count_close = 0
     return open_prnth_pos, close_prnth_pos
