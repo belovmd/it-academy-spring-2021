@@ -2,13 +2,13 @@
 # стороны треугольника. Если стороны определяют треугольник, найти его площадь.
 # Если нет, вывести сообщение о неверных данных.
 
-A = 5
-B = 5
-C = 5
+Side_A = 5
+Side_B = 5
+Side_C = 5
 
-if A < B + C and B < A + C and C < A + B:
-    P = (A + B + C) / 2
-    S = (P * (P - A) * (P - B) * (P - C))**.5
-    print('Треуголиник. Площадь треугольника:', S)
+if Side_A < Side_B + Side_C and Side_B < Side_A + Side_C and Side_C < Side_A + Side_B:
+    Perimetr = (Side_A + Side_B + Side_C) / 2
+    Square = (Perimetr * (Perimetr - Side_A) * (Perimetr - Side_B) * (Perimetr - Side_C))**.5
+    print('Треуголиник. Площадь треугольника:', Square)
 else:
     print('не треугольник. Данные не верны')

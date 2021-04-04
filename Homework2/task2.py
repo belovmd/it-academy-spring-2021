@@ -1,13 +1,22 @@
-# Найти самое длинное слово в введенном предложении.
-txt = input()
-maxlen = 0
-maxword = []
+# 2. Найти самое длинное слово в введенном предложении. Учтите что в
+# предложении есть знаки препинания.
+
+znaki_prep = ".?!,-;:"
+
+max_len = 0
+max_word = []
+
+txt = input("Найти самое длинное слово в предложении. Введите предложение:")
+
+for letter in txt:
+    if letter in znaki_prep:
+        txt = txt.replace(letter, " ")
 
 for word in txt.split():
-    L = len(word)
-    if L > maxlen:
-        maxlen = L
-        maxword = [word]
-    elif L == maxlen:
-        maxword.append(word)
-print('самое длинное слово', maxword, 'состоит из', maxlen, 'букв')
+    count_letter = len(word)
+    if count_letter > max_len:
+        max_len = count_letter
+        max_word = [word]
+    elif count_letter == max_len:
+        max_word.append(word)
+print('самое длинное слово', max_word, 'состоит из', max_len, 'букв')

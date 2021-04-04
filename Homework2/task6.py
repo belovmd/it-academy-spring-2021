@@ -1,14 +1,16 @@
-# Определите, является ли число палиндромом (читается слева направо и
+# 6. Определите, является ли число палиндромом (читается слева направо и
 # справа налево одинаково).  Число положительное целое, произвольной длины.
 # Задача требует работать только с числами (без конвертации числа в строку
 # или что-нибудь еще).
-def ReverseNumber(n, partial=0):
+def reverse_number(n, partial=0):
     if n == 0:
         return partial
-    return ReverseNumber(n // 10, partial * 10 + n % 10)
+    return reverse_number(n // 10, partial * 10 + n % 10)
 
 
 trial = int(input())
 
-if ReverseNumber(trial) == trial:
+if reverse_number(trial) == trial:
     print("это полиндром")
+else:
+    print("это не полиндром")
