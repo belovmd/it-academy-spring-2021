@@ -31,25 +31,25 @@ def delete_other_symb(symb):
 
 
 def valid_parentheses(string):
-    l = list(filter(delete_other_symb, string))
-    if not l:
+    lst_ = list(filter(delete_other_symb, string))
+    if not lst_:
         return True
-    if len(l) % 2:
+    if len(lst_) % 2:
         return False
     state = True
     while True:
         i = 0
-        parent = l.pop(0)
+        parent = lst_.pop(0)
         if parent == ")":
             return False
-        while i < len(l):
-            if l[i] == ")":
-                del l[i]
+        while i < len(lst_):
+            if lst_[i] == ")":
+                del lst_[i]
                 break
             i += 1
-            if i == len(l):
+            if i == len(lst_):
                 return False
-        if not l:
+        if not lst_:
             return True
         elif not state:
             return False

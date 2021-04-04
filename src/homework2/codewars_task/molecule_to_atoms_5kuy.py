@@ -131,7 +131,7 @@ def add_digit_to_slice(slice_lst, num):
             i += 2
         else:
             new_lst.append(str(num))
-            i += 1      # мб прорустил new_lst.append(num). Посмотреть при отладке
+            i += 1
     return new_lst
 
 
@@ -193,7 +193,7 @@ def merge_number_to_char(str_):
     while count > 0:
         pos = expand_breakets(new_list)
         new_list = merge_molecule_and_digit_expression(new_list, pos)
-        new_list = kostyl(new_list)  # Костыль. Появлялись посторяющиеся числа.
+        new_list = kostyl(new_list)
         count -= 1
     new_list = calculate_repeat_molecule(new_list)
     return merge_molecule_and_digit(new_list)
@@ -204,5 +204,6 @@ def print_molecule_to_atoms():
     print("\t\tTask5: Molecule to atoms - 5kuy")
     print("Mg(OH)MgCa[CaO]2 =>", merge_number_to_char("Mg(OH)2MgCa2[CaO]2"))
     print("Mg(OH)2=>", merge_number_to_char("Mg(OH)2"))
-    print("C2(OH)2{MgCa}[CaO]2 =>", merge_number_to_char("C2(OH)2{MgCa}2[CaO]2"))
+    print("C2(OH)2{MgCa}[CaO]2 =>", merge_number_to_char(
+        "C2(OH)2{MgCa}2[CaO]2"))
     print("-" * 40)
