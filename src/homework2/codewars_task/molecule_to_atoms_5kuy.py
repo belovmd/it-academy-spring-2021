@@ -21,7 +21,8 @@ outside the brackets tells you that you have to multiply count of e
 ach atom inside the bracket on this index. For example, in Fe(NO3)2
 you have one iron atom, two nitrogen atoms and six oxygen atoms.
 
-Note that brackets may be round, square or curly and can also be nested. Index after the braces is optional.
+Note that brackets may be round, square or curly and can also be nested.
+Index after the braces is optional.
 
 """
 
@@ -90,7 +91,8 @@ def expand_breakets(lst_):
         previous_pos = close_prnth_pos
         close_prnth_pos = lst_.index(")", close_prnth_pos + 1)
         count_close += 1
-        count_open = count_open + lst_[previous_pos + 1: close_prnth_pos].count("(")
+        count_open = count_open + lst_[
+                                  previous_pos + 1: close_prnth_pos].count("(")
         count_open -= count_close
         count_close = 0
     return open_prnth_pos, close_prnth_pos
