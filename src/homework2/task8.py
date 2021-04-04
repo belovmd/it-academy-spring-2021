@@ -234,9 +234,12 @@ def format_duration(seconds):
     elif len(result_list) == 2:
         return '{} and {}'.format(result_list[0], result_list[1])
     elif len(result_list) == 3:
-        return '{}, {} and {}'.format(result_list[0], result_list[1], result_list[2])
+        return '{}, {} and {}'.format(result_list[0], result_list[1],
+                                      result_list[2])
     elif len(result_list) == 4:
-        return '{}, {}, {} and {}'.format(result_list[0], result_list[1], result_list[2], result_list[3])
+        return '{}, {}, {} and {}'.format(result_list[0], result_list[1],
+                                          result_list[2], result_list[3])
     elif len(result_list) == 5:
-        return '{}, {}, {}, {} and {}'.format(result_list[0], result_list[1], result_list[2], result_list[3],
+        return '{}, {}, {}, {} and {}'.format(result_list[0], result_list[1],
+                                              result_list[2], result_list[3],
                                               result_list[4])
