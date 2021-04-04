@@ -116,9 +116,9 @@ def valid_parentheses(string):
     """
     stack = []
     for element in string:
-        if element is '(':
+        if element == '(':
             stack.append(')')
-        if element is ')':
+        if element == ')':
             if not stack:
                 return False
             else:
