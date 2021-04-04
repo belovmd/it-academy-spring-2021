@@ -17,6 +17,5 @@ target = 0
 
 while source:
     target, source = (target * 10 + source % 10), (source // 10)
-    # print(target, source)
 
 print('Number %s is%s a palindrome' % (n, '' if target == n else ' not'))

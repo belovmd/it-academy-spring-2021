@@ -8,20 +8,19 @@
 
 """
 
+import string
 
-in_str = '"Python" is an interpreted, high-level and general-purpose programmmmming language!'
-# punctuation = string.punctuation
-punctuation = '.,!?"#()[];:<>'
+in_str = '"Python" is an interpreted, high-level and general-purpose programmmmmming language!'
 
-words = in_str.translate(str.maketrans('', '', punctuation)).split()
-
-res = ['']
+words = in_str.split()
+max_len = 0
+result = set()
 for word in words:
-    print(word, len(word), len(res[0]))
-    if len(word) > len(res[0]):
-        res = [].append(word)
-    elif len(word) == len(res[0]):
-        res.append(word)
+    word = word.strip(string.punctuation)
+    if len(word) > max_len:
+        max_len, result = len(word), set((word, ))
+    elif len(word) == max_len:
+        result.add(word)
 
-if len(res):
-    print('MAX length %s chars have words: %s' % (len(res[0]), ', '.join(res)))
+if len(result):
+    print('MAX length %s chars have words: %s' % (max_len, ', '.join(result)))

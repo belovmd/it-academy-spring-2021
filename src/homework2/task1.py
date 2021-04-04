@@ -14,11 +14,11 @@ M = 3
 N = 20
 S = 3
 
-price = M + N / 100
+price = M * 100 + N
 total_cost = S * price
 
-print('Total cost = {p1} items * {p2} rubles = {p3} rubles {p4} pennies'.format(
+print('Total cost = {p1} items * {p2} rubles = {p3} rubles {p4} kopecks'.format(
     p1=S,
-    p2=price,
-    p3=int(total_cost // 1),
-    p4=int(total_cost % 1 * 100)))
+    p2=price / 100,
+    p3=int(total_cost // 100),
+    p4=int(total_cost % 100)))

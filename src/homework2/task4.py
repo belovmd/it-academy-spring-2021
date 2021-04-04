@@ -10,9 +10,9 @@ in_str = 'Ab1cD e3fG Hij4 эюя'
 lower, upper = 0, 0
 
 for c in in_str:
-    if ord('a') <= ord(c) <= ord('z'):
+    if 'a' <= c <= 'z':
         lower += 1
-    elif ord('A') <= ord(c) <= ord('Z'):
+    elif 'A' <= c <= 'Z':
         upper += 1
 
 print('Input string:', in_str)

@@ -40,23 +40,55 @@ def unique_in_order(iterable):
     return [c for i, c in enumerate(iterable) if not i or iterable[i - 1] != c]
 
 
-def dir_reduc(arr):
+def dir_reduction(arr):
     """Directions Reduction (5 kyu): https://www.codewars.com/kata/550f22f4d758534c1100025a
 
-    Write a function dir_reduc which will take an array of strings and returns an array of strings
-    with the needless directions removed (W<->E or S<->N side by side).
+    Write a function dir_reduction which will take an array of strings and returns an array of
+    strings with the needless directions removed (W<->E or S<->N side by side).
     Example:
-        dir_reduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]) == ["WEST"]
-        dir_reduc(["NORTH", "WEST", "SOUTH", "EAST"]) == ["NORTH", "WEST", "SOUTH", "EAST"]
+        dir_reduction(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]) == ["WEST"]
+        dir_reduction(["NORTH", "WEST", "SOUTH", "EAST"]) == ["NORTH", "WEST", "SOUTH", "EAST"]
     """
 
-    stack = []
+    class Stack:
+
+        def __init__(self):
+            self.__stack = []
+
+        def __len__(self):
+            return len(self.__stack)
+
+        def is_empty(self):
+            return self.__stack == []
+
+        def push(self, element):
+            self.__stack.append(element)
+
+        def peek(self):
+            if not self.is_empty():
+                return self.__stack[-1]
+            else:
+                raise IndexError('peek from empty stack')
+
+        def pop(self):
+            if not self.is_empty():
+                peek_val = self.peek()
+                self.__stack.pop()
+                return peek_val
+            else:
+                raise IndexError('pop from empty stack')
+
+        def list_of_elements(self):
+            return self.__stack[:]
+
+    stack = Stack()
+    removed_directions = ({'NORTH', 'SOUTH'}, {'EAST', 'WEST'})
     for direction in arr:
-        if not stack or not {direction, stack[-1]} in ({'NORTH', 'SOUTH'}, {'EAST', 'WEST'}):
-            stack.append(direction)
+        if stack.is_empty() or not {direction, stack.peek()} in removed_directions:
+            stack.push(direction)
         else:
             stack.pop()
-    return stack
+    return stack.list_of_elements()
 
 
 def snail(matrix):
@@ -68,7 +100,7 @@ def snail(matrix):
         array = [[1,2,3],
                  [4,5,6],
                  [7,8,9]]
-        snail(array) #=> [1,2,3,6,9,8,7,4,5]
+        snail(array) => [1,2,3,6,9,8,7,4,5]
     """
 
     size = len(matrix)
@@ -101,11 +133,11 @@ if __name__ == '__main__':
     assert unique_in_order(test) == [1, 2, 3], 'Failed - test3'
     print('Done!')
 
-    print('---------------- dir_reduc tests ------------------')
+    print('-------------- dir_reduction tests ----------------')
     test = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
-    assert dir_reduc(test) == ['WEST'], 'Failed - test1'
+    assert dir_reduction(test) == ['WEST'], 'Failed - test1'
     test = ["NORTH", "WEST", "SOUTH", "EAST"]
-    assert dir_reduc(test) == ["NORTH", "WEST", "SOUTH", "EAST"], 'Failed - test2'
+    assert dir_reduction(test) == ["NORTH", "WEST", "SOUTH", "EAST"], 'Failed - test2'
     print('Done!')
 
     print('------------------ snail tests --------------------')
