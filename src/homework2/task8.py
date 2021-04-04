@@ -55,23 +55,20 @@ def dir_reduction(arr):
         def __init__(self):
             self.__stack = []
 
-        def __len__(self):
-            return len(self.__stack)
-
-        def is_empty(self):
-            return self.__stack == []
+        def __bool__(self):
+            return bool(self.__stack)
 
         def push(self, element):
             self.__stack.append(element)
 
         def peek(self):
-            if not self.is_empty():
+            if self.__bool__():
                 return self.__stack[-1]
             else:
                 raise IndexError('peek from empty stack')
 
         def pop(self):
-            if not self.is_empty():
+            if self.__bool__():
                 peek_val = self.peek()
                 self.__stack.pop()
                 return peek_val
@@ -84,7 +81,7 @@ def dir_reduction(arr):
     stack = Stack()
     removed_directions = ({'NORTH', 'SOUTH'}, {'EAST', 'WEST'})
     for direction in arr:
-        if stack.is_empty() or not {direction, stack.peek()} in removed_directions:
+        if not stack or not {direction, stack.peek()} in removed_directions:
             stack.push(direction)
         else:
             stack.pop()
