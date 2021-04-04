@@ -161,3 +161,82 @@ def sum_pairs(ints, s):
         return result[min(result.keys())]  # вывод результата с наименьшим промежутком
     else:
         return None
+
+
+def format_duration(seconds):
+    """Human readable duration format
+
+    Your task in order to complete this Kata
+    is to write a function which formats a duration,
+    given as a number of seconds, in a human-friendly way.
+
+    The function must accept a non-negative integer.
+    If it is zero, it just returns "now".
+    Otherwise, the duration is expressed as a combination of
+    years, days, hours, minutes and seconds.
+
+    It is much easier to understand with an example:
+
+    format_duration(62)    # returns "1 minute and 2 seconds"
+    format_duration(3662)  # returns "1 hour, 1 minute and 2 seconds"
+    For the purpose of this Kata, a year is 365 days and a day is 24 hours.
+
+    Note that spaces are important.
+
+    Detailed rules
+    The resulting expression is made of components like 4 seconds, 1 year, etc.
+    In general, a positive integer and one of the valid units of time,
+    separated by a space. The unit of time is used in plural if the integer is greater than 1.
+
+    The components are separated by a comma and a space (", ").
+    Except the last component, which is separated by " and ",
+    just like it would be written in English.
+
+    A more significant units of time will occur before than a least significant one.
+    Therefore, 1 second and 1 year is not correct, but 1 year and 1 second is.
+
+    Different components have different unit of times.
+    So there is not repeated units like in 5 seconds and 1 second.
+
+    A component will not appear at all if its value happens to be zero.
+    Hence, 1 minute and 0 seconds is not valid, but it should be just 1 minute.
+
+    A unit of time must be used "as much as possible".
+    It means that the function should not return 61 seconds,
+    but 1 minute and 1 second instead.
+    Formally, the duration specified by of a component
+    must not be greater than any valid more significant unit of time.
+    """
+    if not seconds:
+        return 'now'
+
+    year = (seconds // 31536000)
+    day = (seconds - year * 31536000) // 86400
+    hour = (seconds - year * 31536000 - day * 86400) // 3600
+    minute = (seconds - year * 31536000 - day * 86400 - hour * 3600) // 60
+    second = (seconds - year * 31536000 - day * 86400 - hour * 3600 - minute * 60) % 60
+
+    result_list = []
+
+    if year:
+        result_list.append('{} year{}'.format(year, 's' if year > 1 else ''))
+    if day:
+        result_list.append('{} day{}'.format(day, 's' if day > 1 else ''))
+    if hour:
+        result_list.append('{} hour{}'.format(hour, 's' if hour > 1 else ''))
+    if minute:
+        result_list.append('{} minute{}'.format(minute, 's' if minute > 1 else ''))
+    if second:
+        result_list.append('{} second{}'.format(second, 's' if second > 1 else ''))
+
+    if len(result_list) == 1:
+        return result_list[0]
+    elif len(result_list) == 2:
+        return '{} and {}'.format(result_list[0], result_list[1])
+    elif len(result_list) == 3:
+        return '{}, {} and {}'.format(result_list[0], result_list[1], result_list[2])
+    elif len(result_list) == 4:
+        return '{}, {}, {} and {}'.format(result_list[0], result_list[1], result_list[2], result_list[3])
+    elif len(result_list) == 5:
+        return '{}, {}, {}, {} and {}'.format(result_list[0], result_list[1], result_list[2], result_list[3],
+                                              result_list[4])
