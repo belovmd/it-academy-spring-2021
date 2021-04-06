@@ -5,7 +5,7 @@
 
 
 def count_uniq_num(lst1, lst2):
-    """ Function count different numbers in both lists """
+    """Function count different numbers in both lists """
     return len(set(lst1) ^ set(lst2))
 
 
