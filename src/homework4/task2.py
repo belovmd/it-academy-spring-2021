@@ -12,7 +12,7 @@ def separate_country_and_cities(lst_):
     dict_ = {}
     for elem in lst_:
         pos = elem.find(" ")
-        dict_[elem[: pos + 1]] = elem[pos + 1: ]
+        dict_[elem[: pos + 1]] = elem[pos + 1:]
     return dict_
 
 
