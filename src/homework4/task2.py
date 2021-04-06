@@ -32,7 +32,7 @@ def print_result():
     lst_cities = enter_data()
     lst_countries = find_countries(country_and_cities, lst_cities)
     print("\nВыходные данные")
-    print(*lst_countries,sep="\n")
+    print(*lst_countries, sep="\n")
 
 
 print_result()
