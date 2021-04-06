@@ -1,7 +1,7 @@
 """Homework 4 - Task 7"""
 
 
-def greatest_common_divisor1(num1: int, num2: int) -> int:
+def greatest_common_divisor(num1: int, num2: int) -> int:
     """Оглянемся назад. Числа
 
     Даны два натуральных числа. Вычислите их наибольший общий делитель при помощи
@@ -14,4 +14,4 @@ def greatest_common_divisor1(num1: int, num2: int) -> int:
 
 if __name__ == '__main__':
 
-    print(greatest_common_divisor1(18, 30))
+    print(greatest_common_divisor(18, 30))
