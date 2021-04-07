@@ -28,8 +28,8 @@ def minus_pos(ip2, pos):
 
 
 def ips_between(start, end):
-    ip1 = list(map(lambda x: int(x), start.split(".")))
-    ip2 = list(map(lambda x: int(x), end.split(".")))
+    ip1 = [int(elem) for elem in start.split(".")]
+    ip2 = [int(elem) for elem in end.split(".")]
     raznost = 0
     for i in range(3, -1, -1):
         if ip1[i] != ip2[i]:
