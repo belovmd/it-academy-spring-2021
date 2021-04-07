@@ -1,3 +1,4 @@
+# Task18 - 33 line
 import random
 
 guesses_made = 0
