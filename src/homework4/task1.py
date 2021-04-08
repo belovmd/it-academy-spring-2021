@@ -6,4 +6,4 @@ Dict comprehensions
 а значениями кубы этих чисел.
 """
 
-result = {index: index ** 3 for index in range(1, 20)}
+result = {index: index ** 3 for index in range(1, 21)}
