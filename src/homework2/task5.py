@@ -3,7 +3,7 @@
 first_number = second_number = 1
 num = int(input())
 
-for el in range(3, num+1):
+for el in range(3, num + 1):
     first_number, second_number = second_number, first_number + second_number
     fib_number = second_number
 print(fib_number)
