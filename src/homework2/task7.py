@@ -1,15 +1,15 @@
 # Даны: три стороны треугольника. Требуется: проверить, действительно ли это стороны
 # треугольника. Если стороны определяют треугольник, найти его площадь.
 # Если нет, вывести сообщение о неверных данных.
-a = 40
-b = 60
-c = 80
-p = (a + b + c) / 2  # for Square
+side1 = 40
+side2 = 60
+side3 = 80
+semi_perimeter = (side1 + side2 + side3) / 2  # for Square
 
-if (b - c) < a < (b + c):
-    if (a - c) < b < (a + c):
-        if (a - b) < c < (a + b):
-            S = (p * (p - a) * (p - b) * (p - c)) ** 0.5
+if (side2 - side3) < side1 < (side2 + side3):
+    if (side1 - side3) < side2 < (side1 + side3):
+        if (side1 - side2) < side3 < (side1 + side2):
+            S = (semi_perimeter * (semi_perimeter - side1) * (semi_perimeter - side2) * (semi_perimeter - side3)) ** 0.5
             print("Площадь треугольника равна", S)
         else:
             print("Неверные данные")

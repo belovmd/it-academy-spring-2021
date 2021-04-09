@@ -7,28 +7,24 @@
 # indexes of the elements start from 1 (not 0)
 
 iq_test = "2 4 7 8 10"
-number = 3
-str_ = iq_test.split()
-for num in str_:
-    if number % 2:
-        if int(num) % 2:
-            print(num)
-    elif not number % 2:
-        if not int(num) % 2:
-            print(num)
+lst = list(iq_test.split())
+lst1 = [num for num in lst if int(num) % 2]
+if len(lst1) == 1:
+    n = lst1[0]
+    index = lst.index(n) + 1
+    print(index)
+else:
+    lst2 = [num for num in lst if not int(num) % 2]
+    n = lst2[0]
+    index = lst.index(n) + 1
+    print(index)
 
 
 # An isogram is a word that has no repeating letters, consecutive or non-consecutive.
 # Implement a function that determines whether a string that contains only letters is
 # an isogram. Assume the empty string is an isogram. Ignore letter case.
 
-str_ = "isIsogram"
-other_str = str_.lower()
-lst = []
-for i in other_str:
-    if i not in lst:
-        lst.append(i)
-if len(other_str) == 0 or len(other_str) == len(lst):
-    print("true")
-else:
-    print("false")
+str_ = "Isogram"
+set_ = set(str_.lower())
+if len(str_) == len(set_):
+    print("This is a word is isogram")
