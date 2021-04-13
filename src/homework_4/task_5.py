@@ -30,7 +30,6 @@ for key in pupil_experience.values():
 
 print(*list(set(lang)), sep=', ')
 
+uniq_list = [uniq for uniq in lang if lang.count(uniq) == 1]
 
-for uniq in lang:
-    if lang.count(uniq) == 1:
-        print(uniq)
+print(*uniq_list)
