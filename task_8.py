@@ -1,3 +1,9 @@
+"""
+Task8.
+
+8 lines: Command line arguments, exception handling
+"""
+
 import sys
 
 """

@@ -1,6 +1,11 @@
+"""
+Task19.
+
+21 lines: XML/HTML parsing
+"""
+
 # From http://effbot.org/zone/element-index.htm
 import xml.etree.ElementTree as etree
-
 
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>

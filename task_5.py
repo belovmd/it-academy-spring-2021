@@ -1,3 +1,10 @@
+"""
+Task5.
+
+5 lines: Functions
+"""
+
+
 def greet(name):
     print('Hello', name)
 
