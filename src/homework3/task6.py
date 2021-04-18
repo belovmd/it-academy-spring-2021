@@ -4,8 +4,17 @@
 # дополнительный список использовать нельзя, задачу нужно выполнить за
 # один проход по списку. Распечатайте полученный список.
 
-lst = [1, 2, 15, 0, 3, 17, 4, 19]
 
-for i in range(len(lst)):
-    if not lst[i]:
-        lst.append(lst.pop(i))
+lst = [1, 2, 15, 0, 0, 3, 17, 4, 19, 0, 7]
+
+index = num_of_changes = 0
+
+while num_of_changes + index <= len(lst) - num_of_changes:
+    if lst[index]:
+        index += 1
+    else:
+        lst.append(lst.pop(index))
+        index -= 1
+        num_of_changes += 1
+
+print(lst)
