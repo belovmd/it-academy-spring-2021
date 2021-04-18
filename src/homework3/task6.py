@@ -14,7 +14,6 @@ while num_of_changes + index <= len(lst) - num_of_changes:
         index += 1
     else:
         lst.append(lst.pop(index))
-        index -= 1
         num_of_changes += 1
 
 print(lst)
