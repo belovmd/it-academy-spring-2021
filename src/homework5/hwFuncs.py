@@ -124,9 +124,8 @@ def triangle_hw2_7():
     if side_a >= side_b + side_c or side_b >= side_a + side_c or side_c >= side_a + side_b:
         print('Неверные данные!')
     else:
-        perimeter = (side_a + side_b + side_c) / 2
-        square = (perimeter * (perimeter - side_a) *
-                  (perimeter - side_b) * (perimeter - side_c)) ** 0.5
+        per = (side_a + side_b + side_c) / 2
+        square = (per * (per - side_a) * (per - side_b) * (per - side_c)) ** 0.5
         print('Площадь данного треугольника : ', square)
 
 
@@ -149,7 +148,7 @@ def fizzbuzz_hw3_1():
 
 def list_practice_hw3_2():
     # List practice
-    # 1. Используйте генератор списков чтобы получить следующий: ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
+    # 1. Используйте генератор чтобы получить следующий: ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
     # 2. Используйте на предыдущий список slice чтобы получить следующий: ['ab', 'ad', 'bc'].
     # 3. Используйте генератор списков чтобы получить следующий ['1a', '2a', '3a', '4a'].
     # 4. Одной строкой удалите элемент  '2a' из прошлого списка и напечатайте его.
@@ -161,6 +160,8 @@ def list_practice_hw3_2():
     list_for_task3 = [str(chr_) + 'a' for chr_ in range(1, 5)]
     print(list_for_task3.pop(1))  # task4
     list_for_task5 = list_for_task3[:] + ['2a']
+    print(list_for_task2)
+    print(list_for_task5)
 
 
 def tuple_practice_hw3_3():
@@ -175,8 +176,10 @@ def tuple_practice_hw3_3():
     tuple_for_task1 = tuple(['a', 'b', 'c'])
     list_for_task2 = list(('a', 'b', 'c'))
     a, b, c = ('a', 2, 'python')  # task3
+    print(a, b, c)
     tuple_for_task4 = ([1, 2, 3],)
-
+    print(tuple_for_task1)
+    print(list_for_task2)
     print(len(tuple_for_task4))
 
 
