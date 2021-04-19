@@ -2,6 +2,12 @@ import hwFuncs
 
 
 def runner(*args):
+    # Напишите функцию runner.
+    # (все станет проще когда мы изучим модули, getattr
+    # и setattr)
+    # 1. runner() – все фукнции вызываются по очереди
+    # 2. runner(‘func_name’) – вызывается только функцию func_name.
+    # 3. runner(‘func’, ‘func1’...) - вызывает все переданныефункции
 
     def execute_func(element_):
         print('Function start: {}()'.format(element_))
