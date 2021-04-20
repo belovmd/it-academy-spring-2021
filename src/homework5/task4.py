@@ -45,7 +45,7 @@ def create_bar_graph_rating():
 
     with open('ratings.txt', 'w') as file_:
         for element in sorted(dict_.keys()):
-            line = '{} : {}\n'.format(element,  '*' * dict_[element])
+            line = '{} : {}\n'.format(element, '*' * dict_[element])
             file_.writelines(line)
 
 
@@ -425,4 +425,3 @@ years.txt
 2016 : *****
 2017 : *****
 """
-
