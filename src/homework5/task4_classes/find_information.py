@@ -1,3 +1,6 @@
+import copy
+
+
 class TextReader:
 
     def __init__(self, path):
@@ -37,7 +40,7 @@ class TextReader:
             print("Name {} | Value {}".format(key, value))
 
     def get_films_dict(self):
-        return self.__inf_about_movies
+        return copy.deepcopy(self.__inf_about_movies)
 
     def close_file(self):
         self.__file.close()

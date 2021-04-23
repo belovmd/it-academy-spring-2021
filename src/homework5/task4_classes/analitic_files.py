@@ -22,12 +22,12 @@ class AnalyzeFilms:
         return lst_
 
     def plot_hist_rank(self):
-        bins = list(set(self.rank_list)).sort()
-        plt.hist(self.rank_list, bins=bins, edgecolor="black")
-        plt.title("Movie rating")
-        plt.ylabel("Count of films")
-        plt.xlabel("Rank")
-        plt.savefig('./task4_output_files/ratings.png')
+        dict_ = dict()
+        self.__cache_data(dict_, self.rank_list)
+        with open("./task4_output_files/ratings.txt ", 'w') as file_:
+            file_.write("\t\t\t Histogram rating films\n")
+            for key, value in dict_.items():
+                file_.write("{} {}\n".format(key, "#" * value))
 
     def plot_hist_years(self):
         bins = list(set(self.years_list)).sort()
@@ -36,6 +36,11 @@ class AnalyzeFilms:
         plt.ylabel("Count of films")
         plt.xlabel("Years")
         plt.savefig('./task4_output_files/years.png')
+
+    def __cache_data(self, cache, data):
+        for elem in data:
+            cache[elem] = cache.get(elem, 0) + 1
+
 
 
 
