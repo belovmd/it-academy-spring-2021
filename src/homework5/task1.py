@@ -34,42 +34,41 @@ def runner(*names, rerun=True):
         # импорт в локальную область видимости, чтобы модуль types не влиял на работу runner
         import types
 
-        return type(obj) in (
-            types.FunctionType,
-            types.BuiltinFunctionType
-        )
+        return isinstance(obj, (types.FunctionType, types.BuiltinFunctionType))
 
-    imported_modules = {}
-    funcs = {}
+    imported_modules = {}  # key - id объекта модуля, value - объект модуля
+    funcs = {}  # key - имя переменной, содержащей ссылку на ф-цию,
+    # value - кортеж (<имя модуля в котором создана переменная>, <объект функции>)
+
     for attr, obj in globals().items():
         if attr.startswith('_'):
             continue
         if is_function(obj) and obj.__name__ != 'runner':
-            funcs.setdefault(attr, []).append(obj)
+            funcs.setdefault(attr, []).append((runner.__module__, obj))
         elif type(obj).__name__ == 'module':
             imported_modules.setdefault(id(obj), obj)  # ключ - id (для исключения дублирования)
 
     for mod_obj in imported_modules.values():
         for attr in dir(mod_obj):
             if not attr.startswith('_') and is_function(getattr(mod_obj, attr)):
-                funcs.setdefault(attr, []).append(getattr(mod_obj, attr))
+                funcs.setdefault(attr, []).append((mod_obj.__name__, getattr(mod_obj, attr)))
 
     processed = {}
     if not names:
         names = funcs.keys()
     for name in names:
         try:
-            objects = funcs[name]
-            for func in objects:
-                if not rerun and processed.get(id(func)):
+            tuples = funcs[name]
+            for mod_name, func_obj in tuples:
+                if not rerun and processed.get(id(func_obj)):
                     continue
                 print('Calling function "{name}" id{id} from module "{mod}": '.format(
                     name=name,
-                    id=id(func),
-                    mod=func.__module__
+                    id=id(func_obj),
+                    mod=mod_name
                 ), end='')
-                processed.setdefault(id(func), True)
-                res = func()
+                processed.setdefault(id(func_obj), True)
+                res = func_obj()
                 print(res)
         except KeyError:
             print('Calling function "{}": ERROR - function is not exist'.format(name))
@@ -80,7 +79,7 @@ def runner(*names, rerun=True):
 if __name__ == '__main__':
 
     import task5        # импортируется в целях тестирования  # noqa
-    import math         # импортируется в целях тестирования  # noqa
+    # import math         # импортируется в целях тестирования  # noqa
     import functools    # импортируется в целях тестирования  # noqa
 
     def test1():
@@ -94,7 +93,7 @@ if __name__ == '__main__':
     print('---------------- RUNNER with one argument -----------------------')
     runner('test1')
     print('--------------- RUNNER with many arguments ----------------------')
-    runner('test1', 'test4', 'blablabla', 'acos', 'hypot', 'reduce')
+    runner('test1', 'test3', 'blablabla', 'reduce')
     print('--------- RUNNER without arguments (rerun = False) ---------------')
     runner(rerun=False)  # test1 вызывается, test3 не вызывается
     print('--------- RUNNER without arguments (rerun = True) --------------')
