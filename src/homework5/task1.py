@@ -13,10 +13,11 @@ import example_module_for_task1
 def runner(*args):
     func_lst = []
     if not args:
-        func_lst = [
-                    elem for elem in dir(example_module_for_task1) if
-                    elem[:2] != "__" and elem[: 1] != "_" and
-                    callable(getattr(example_module_for_task1, elem))]
+        func_lst = [elem for elem in dir(
+                     example_module_for_task1)
+                    if elem[:2] != "__" and elem[: 1] != "_"
+                    and callable(getattr(
+                        example_module_for_task1, elem))]
     elif len(args) == 1:
         func_lst.append(args[0])
     elif len(args) > 1:

@@ -16,7 +16,8 @@ from task4_classes.find_information \
 films = TextReader(
     "./data_hw5/ratings.list")
 films.find_top_250_movies()
-films.write_top_films_to_file()
+films.\
+    write_top_films_to_file()
 analyze = AnalyzeFilms(
     films.get_films_dict())
 analyze.plot_hist_years()      # Одну гистограмму сдела в txt файле
