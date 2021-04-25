@@ -39,8 +39,9 @@ def wrapper_list(lst_):
 def insert_comma_between(lst_):
     new_lst = list()
     for pos in range(len(lst_)):
-        if pos != len(lst_) - 1 and isinstance(lst_[pos], int) \
-             and isinstance(lst_[pos+1], int):
+        if pos != len(lst_) - 1 and isinstance(
+                lst_[pos], int) and \
+                isinstance(lst_[pos + 1], int):
             new_lst.append(lst_[pos])
             new_lst.append(',')
             continue

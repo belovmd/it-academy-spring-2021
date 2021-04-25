@@ -7,8 +7,10 @@ ratings.txt – гистограмма рейтингов, years.txt – гис�
 '''
 
 
-from task4_classes.analitic_files import AnalyzeFilms
-from task4_classes.find_information import TextReader
+from task4_classes.analitic_files \
+    import AnalyzeFilms
+from task4_classes.find_information \
+    import TextReader
 
 
 films = TextReader(
