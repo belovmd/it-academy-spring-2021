@@ -9,11 +9,20 @@
 # Начиная со второй строки - список таких языков. Затем - количество языков,
 # которые знает хотя бы один школьник, на следующих строках - список таких языков.
 
-set1 = {"Russian", "English"}
-set2 = {"Russian", "English", "Belarusian"}
-set3 = {"Russian", "Italian", "French"}
+N = input("Enter the number of students: ")
+M1 = input("Enter the number of languages of the first student: ")
+Languages1 = (input("Enter the languages of the first students: ")).split()
+Languages1 = set(Languages1)
 
-all_students = set1 & set2 & set3
-one_student = set1 | set2 | set3
+M2 = input("Enter the number of languages of the second student: ")
+Languages2 = (input("Enter the languages of the second students: ")).split()
+Languages2 = set(Languages2)
+
+M3 = input("Enter the number of languages of the third  student: ")
+Languages3 = (input("Enter the languages of the third  students: ")).split()
+Languages3 = set(Languages3)
+
+all_students = Languages1 & Languages2 & Languages3
+one_student = Languages1 | Languages2 | Languages3
 
 print(len(all_students), *all_students, len(one_student), *one_student, sep='\n')

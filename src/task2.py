@@ -8,15 +8,15 @@
 # Выходные данные
 # Для каждого из запроса выведите название страны, в котором находится данный город.
 
-str1 = "Russia Moscow Petersburg Novgorod Kaluga"
-str2 = "Ukraine Kiev Donetsk Odessa"
+N = input("Enter number of countries: ")
+country1, *cities1 = (input("Enter country and cities: ")).split()
+country2, *cities2 = (input("Enter country and cities: ")).split()
 
-country1, *cities1 = str1.split()
-country2, *cities2 = str2.split()
 dct1 = {city: country1 for city in cities1}
 dct2 = {city: country2 for city in cities2}
 dct1.update(dct2)
 
+M = input("Enter number of requests: ")
 print(dct1[input("Enter city: ")])
 print(dct1[input("Enter city: ")])
 print(dct1[input("Enter city: ")])
