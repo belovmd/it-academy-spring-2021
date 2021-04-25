@@ -19,5 +19,3 @@ def max_pow2(n):
 print(max_pow2(10))
 print(max_pow2(16))
 print(max_pow2(12))
-
-
