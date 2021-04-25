@@ -50,5 +50,3 @@ def insert_comma_between(lst_):
 
 lst_example = [1, 2, 3, 4, 10, 11, 20, 23, 36, 37, 38]
 print(get_ranges(lst_example))
-
-

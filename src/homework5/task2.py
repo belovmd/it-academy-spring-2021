@@ -1,12 +1,13 @@
 '''2. Создайте декоратор, который хранит результаты вызовов функции
 (за все время вызовов, не только текущий запуск программы)'''
 
-
-import os.path
 from datetime import  datetime
+import os.path
+
 
 FILE_NAME = "log_" + datetime.strftime(
-    datetime.now(), "%Y.%m.%d_%H:%M:%S") + ".txt"
+    datetime.now(), "%Y.%m.%d_%H:%M:%S") \
+            + ".txt"
 
 
 def create_log(func):                                  # Не уверен что правильно понял задание.
@@ -18,8 +19,8 @@ def create_log(func):                                  # Не уверен чт�
         else:
             file_ = open(path, "w")
         result = func(*args, **kwargs)
-        current_time = datetime.strftime(datetime.now(),
-                                         "%Y.%m.%d %H:%M:%S")
+        current_time = datetime.strftime(
+            datetime.now(), "%Y.%m.%d %H:%M:%S")
         func_name = func.__name__
         file_.write("{} {} => {}\n".format(
             current_time, func_name, result))
@@ -41,4 +42,3 @@ def mult(a, b):
 sum(1, 2)
 mult(1, 2)
 sum(3, 4)
-

@@ -50,11 +50,3 @@ class TextReader:
         for key in self.__inf_about_movies.keys():
             file_top_250.write(key + "\n")
         file_top_250.close()
-
-
-
-
-
-
-
-

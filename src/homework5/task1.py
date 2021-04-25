@@ -14,7 +14,7 @@ def runner(*args):
     func_lst = []
     if not args:
         func_lst = [elem for elem in dir(example_module_for_task1)
-                    if elem[:2] != "__" and elem[:1] != "_"
+                    if elem[:2] != "__" and elem[: 1] != "_"
                     and callable(getattr(example_module_for_task1, elem))]
     elif len(args) == 1:
         func_lst.append(args[0])
@@ -22,6 +22,7 @@ def runner(*args):
         func_lst = list(args)
     for func in func_lst:
         getattr(example_module_for_task1, func)()
+
 
 print("Вызов всех функций:")
 runner()

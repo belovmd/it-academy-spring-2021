@@ -1,5 +1,5 @@
-import matplotlib.pyplot as plt
 import copy
+import matplotlib.pyplot as plt
 
 
 class AnalyzeFilms:
@@ -40,9 +40,3 @@ class AnalyzeFilms:
     def __cache_data(self, cache, data):
         for elem in data:
             cache[elem] = cache.get(elem, 0) + 1
-
-
-
-
-
-
