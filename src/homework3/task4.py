@@ -24,5 +24,3 @@ def pairs(str_):
 print(pairs('1 1 1'))
 print(pairs('1 1 1 1'))
 print(pairs('1 1 1 2 2 2 2'))
-
-
