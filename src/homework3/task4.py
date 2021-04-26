@@ -21,6 +21,6 @@ def pairs(str_):
     return num_of_pairs
 
 
-print(pairs('1 1 1'))
-print(pairs('1 1 1 1'))
-print(pairs('1 1 1 2 2 2 2'))
+assert pairs('1 1 1') == 3, 'Should be 3!'
+assert pairs('1 1 1 2 2 2 2') == 9, 'Should be 9!'
+assert pairs('1 1 1 1') == 6, 'Should be 6!'
