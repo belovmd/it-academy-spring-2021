@@ -12,12 +12,12 @@ FILE_NAME = "log_" +\
 
 
 def create_log(func):                                  # Не уверен что правильно понял задание.
-    path = "./task2_log/{}".format(FILE_NAME)          # При каждом запуске программы я в папке task2_log
+    path = "./task2_log/{}".format(FILE_NAME)          # При каждом запуске программы
 
-    def wrapper(*args, **kwargs):                      # создавал файл имя которого приставка log_
-        if os.path.exists(r"{}".format(path)):         # и datetime запуска программы.
-            file_ = open(path, "a")                    # Туда писал время запуска функции,имя и результат
-        else:
+    def wrapper(*args, **kwargs):                      # я в папке task2_log создавал файл
+        if os.path.exists(r"{}".format(path)):         # имя которого приставка log_
+            file_ = open(path, "a")                    # и datetime запуска программы. Туда писал
+        else:                                          # время запуска функции,имя и результат
             file_ = open(path, "w")
         result = func(*args, **kwargs)
         current_time = datetime.strftime(
