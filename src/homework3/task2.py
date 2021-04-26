@@ -9,8 +9,10 @@ List practice
 чтобы в исходном списке этого элемента не было.
 """
 
-list_for_task1 = [chr1 + chr2 for chr1 in ['a', 'b'] for chr2 in ['b', 'c', 'd']]
+list_for_task1 = [chr1 + chr2 for chr1 in 'ab' for chr2 in 'bcd']
 list_for_task2 = list_for_task1[::2]
-list_for_task3 = [str(chr_) + 'a' for chr_ in range(1, 5)]
+list_for_task3 = [str(chr_) + 'a' for chr_ in range(1, 6)]
 print(list_for_task3.pop(1))  # task4
 list_for_task5 = list_for_task3[:] + ['2a']
+
+

@@ -1,3 +1,6 @@
+import collections
+
+
 """
 Пары элементов
 
@@ -9,13 +12,17 @@
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 """
 
-input_str = input()
-lst = input_str.split()
-counter = 0
 
-for i in range(len(lst)):
-    for j in range(i + 1, len(lst)):
-        if lst[i] == lst[j]:
-            counter += 1
+def pairs(str_):
+    counter_ = collections.Counter(str_.split())
+    num_of_pairs = 0
+    for x in counter_.values():
+        num_of_pairs += x * (x - 1) // 2
+    return num_of_pairs
 
-print(counter)
+
+print(pairs('1 1 1'))
+print(pairs('1 1 1 1'))
+print(pairs('1 1 1 2 2 2 2'))
+
+

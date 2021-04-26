@@ -10,7 +10,8 @@ Tuple practice
 """
 
 tuple_for_task1 = tuple(['a', 'b', 'c'])
-list_for_task2 = list(('a', 'b', 'c'))
+tuple_for_task2 = ('a', 'b', 'c')
+list_for_task2 = list(tuple_for_task2)
 a, b, c = ('a', 2, 'python')  # task3
 tuple_for_task4 = ([1, 2, 3], )
 
