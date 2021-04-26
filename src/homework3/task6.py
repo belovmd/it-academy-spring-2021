@@ -14,5 +14,4 @@ while index > 0:
         lst.append(lst.pop(index))
     index -= 1
 
-
 print(lst)

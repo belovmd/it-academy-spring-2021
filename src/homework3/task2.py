@@ -14,5 +14,3 @@ list_for_task2 = list_for_task1[::2]
 list_for_task3 = [str(chr_) + 'a' for chr_ in range(1, 6)]
 print(list_for_task3.pop(1))  # task4
 list_for_task5 = list_for_task3[:] + ['2a']
-
-
