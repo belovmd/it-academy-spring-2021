@@ -5,8 +5,8 @@
 
 
 def get_power_of_two(num):
-    len_num = len(bin(num)) - 3      # -3 потому что первых два символа 0b и нужно еще скинуть оди разряд
-    less_p_two = 0b1 << len_num      # 1000 = 0b1 << 3
+    len_num = len(bin(num)) - 3      # -3 потому что первых два символа 0b
+    less_p_two = 0b1 << len_num      # и нужно еще скинуть оди разряд 1000 = 0b1 << 3
     greate_p_two = 0b1 << (len_num + 1)
     if num - less_p_two > greate_p_two - num:
         return greate_p_two
