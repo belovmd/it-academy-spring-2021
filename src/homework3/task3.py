@@ -1,7 +1,7 @@
 set_1 = set(['a', 'b', 'c'])
-print("set: {} type: {}".format(set_1, type(set_1)))
+print("set: {}".format(set_1))
 list_1 = list(set_1)
-print("list: {} type: {}".format(list_1, type(list_1)))
+print("list: {}".format(list_1))
 a, b, c = "a", 2, "python"
 print("{a} {b} {c}".format(a=a, b=b, c=c))
 set_2 = ([1, 2, 3],)
