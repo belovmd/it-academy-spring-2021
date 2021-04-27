@@ -7,7 +7,7 @@ def calculate_count_of_pairs(lst_):
     cache = dict()
     for elem in set(lst_):
         count_ = lst_.count(elem)
-        cache[elem] = count_*(count_ - 1) - sum(range(count_))
+        cache[elem] = count_ * (count_ - 1) - sum(range(count_))
     return cache
 
 
