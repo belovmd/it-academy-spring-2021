@@ -1,6 +1,6 @@
 def hmw2_tsk1(rub=5, cop=25, numb=30):
     """Функция считает цену товаров"""
-    price = rub + cop/100
+    price = rub + cop / 100
     all_cost = str(price * numb)
     res_rub, res_cop = all_cost.split(".")
     return "Итоговая цена составляет {0} рублей " \

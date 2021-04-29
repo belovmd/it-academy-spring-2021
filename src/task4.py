@@ -6,9 +6,9 @@
 Программа создает 3 файла  top250_movies.txt – названия файлов,
 ratings.txt – гистограмма рейтингов, years.txt – гистограмма годов.
 """
-import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 
 # создадим вспомогательные списки для поиска нужных данных
 file_lst = []   # список состоящий из строк файла
@@ -37,12 +37,12 @@ with open('top250_movies.txt', 'w') as fh:
         fh.writelines('{}\n'.format(title))
 
 # создаем отсортированный список рейтингов и записываем в файл гистограмму
-ratings = [float(top_250[num][2]) for num in range(len(top_250)-1)]
+ratings = [float(top_250[num][2]) for num in range(len(top_250) - 1)]
 ratings.sort()
 ratings_set = set(ratings)
 with open('ratings.txt', 'w') as fh:
     for rating in ratings_set:
-        fh.writelines('| {} {}\n'.format(rating, '+'*ratings.count(rating)))
+        fh.writelines('| {} {}\n'.format(rating, '+' * ratings.count(rating)))
 
 # создаем отсортированный список по годам и записываем в файл гистограмму
 years_cell = [str(top_250[num][-1]).strip().split(' (')
@@ -55,7 +55,7 @@ with open('years.txt', 'w') as fh:
         fh.writelines('| {} {}\n'.format(year, '+' * years.count(year)))
 
 # создадим таблицу с помощью pandas
-columns = file_lst[lst_index[0]-1]  # шапка таблицы
+columns = file_lst[lst_index[0] - 1]  # шапка таблицы
 data = pd.DataFrame(top_250, index=range(1, 251), columns=columns[1:])
 
 # рисуем гистограмму в matplotlib и seaborn
