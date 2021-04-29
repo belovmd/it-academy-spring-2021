@@ -9,10 +9,8 @@ def hmw2_tsk1(rub=5, cop=25, numb=30):
 
 def hmw2_tsk2(string='Самое длинное слово в этом предложении'):
     """Функция ищет самое длинное слово в строке"""
-    formatted_string = "".join(letter for letter in string if
-                               letter.isalpha() or
-                               letter.isspace() or
-                               letter.isdigit())
+    formatted_string = "".join(letter for letter in string
+                               if letter.isalpha() or letter.isspace() or letter.isdigit())
     lst = formatted_string.split()
     big_word = lst[0]
     for word in lst:
