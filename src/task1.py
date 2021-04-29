@@ -12,9 +12,9 @@ import functions_for_task1 as funcs_import
 
 def runner(*args):
     def call_fun(fun):
-        """
+        """Функция call_fun(fun)
 
-        Функция call_fun вызывает непосредственно требуемую функцию из модуля
+        вызывает непосредственно требуемую функцию из модуля
         """
 
         return getattr(funcs_import, fun)()
