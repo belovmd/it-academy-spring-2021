@@ -9,7 +9,7 @@
 """
 
 # 1 Create list by generator
-lst = [str_1 + str_2 for str_1 in ['a', 'b'] for str_2 in ['b', 'c', 'd']]
+lst = [str_1 + str_2 for str_1 in 'ab' for str_2 in 'bcd']
 print(lst)
 
 # 2 Create list by slice
@@ -17,7 +17,7 @@ lst_2 = lst[::2]
 print(lst_2)
 
 # 3 Create list by generator
-lst_3 = [str(digit) + 'a' for digit in range(1, 5)]
+lst_3 = [digit + 'a' for digit in '1234']
 print(lst_3)
 
 # 4 Apply pop method and print element

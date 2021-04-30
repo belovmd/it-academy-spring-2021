@@ -13,10 +13,8 @@ import random
 lst = [random.randint(-5, 5) for num in range(20)]
 print('Входные данные: ', lst)
 
-# Перемещаем все нули в правую часть списка за один проход
 for num in lst:
     if not num:
         lst.append(lst.pop(lst.index(num)))
-    else:
-        pass
+
 print(lst)

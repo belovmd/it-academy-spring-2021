@@ -9,13 +9,13 @@
 
 # 1. Creating list and making tuple
 
-lst = list('abcd')
+lst = ['a', 'b', 'c']
 tpl = tuple(lst)
 print(lst, tpl)
 
 # 2. Creating tuple and making list
 
-tpl = tuple('abcd')
+tpl = ('a', 'b', 'c')
 lst = list(tpl)
 print(tpl, lst)
 

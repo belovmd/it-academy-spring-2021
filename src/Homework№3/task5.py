@@ -6,7 +6,5 @@
 
 lst = ['a', 1, 2, 3, 3, 1, 'b', 'z', '1', 'a', 0]
 for element in lst:
-    if lst.count(element) > 1:
-        pass
-    else:
+    if lst.count(element) == 1:
         print(element)

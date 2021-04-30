@@ -11,8 +11,6 @@
 import random
 
 # Создаем список чисел для входных данных
-# lst = list(str(random.randint(10000000, 99999999)))
-# lst = [int(num) for num in lst]
 lst = [random.randint(-10, 10) for num in range(15)]
 print('Входные данные: ', lst)
 
@@ -24,8 +22,6 @@ for num in lst:
     if num not in counted_numbers:
         counted_numbers.append(num)
         pairs.append(lst.count(num))
-    else:
-        pass
 
 # Суммируем все пары и выводим значение
 sum_numbers = sum([(num * (num - 1)) / 2 for num in pairs])
