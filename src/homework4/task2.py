@@ -14,30 +14,21 @@
 
 # input data
 countries_num = int(input("Введите количество стран: "))
-country_lst = []
 dict_ = {}
 
-for num in range(countries_num):
-    country_lst.append(input().split())
-
 # make database wih dict
-dict_ = {country_lst[num][0]: country_lst[num][1:] for num in range(countries_num)}
+for num in range(countries_num):
+    country, *cities = input().split()
+    dict_[country] = cities
 
 # requests
-requests_num = int(input("Введите число запросов:"))
+requests_num = int(input("Введите число запросов: "))
 requests_lst = []
 for _ in range(requests_num):
     requests_lst.append(input())
 
-
 # output data
 for city in requests_lst:
-    for num in range(countries_num):
-        if city in list(dict_.values())[num]:
-            for key in dict_:
-                if city in dict_[key]:
-                    print(key)
-                else:
-                    pass
-        else:
-            pass
+    for key, value in dict_.items():
+        if city in value:
+            print(key)

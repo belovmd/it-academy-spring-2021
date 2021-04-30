@@ -27,34 +27,26 @@ French
 Затем - количество языков, которые знает хотя бы один школьник,
 на следующих строках - список таких языков.
 """
+from functools import reduce
 
 # input data
 students_amount = int(input("Введите количество школьников: "))
-counter = students_amount
-langs = {}
 
-while counter:
+# создадим список множеств языков, которые знают школьники
+langs = []
+for num in range(students_amount):
     lang_amount = int(input("Введите количество языков, которое знает школьник: "))
-    lang_student = (input("Введите язык: ") for _ in range(lang_amount))
-    langs[students_amount - counter + 1] = set(lang_student)
-    counter -= 1
+    langs.append({input("Введите язык: ") for _ in range(lang_amount)})
 
-# output data
-# all known languages
-student_langs = langs[1]
-for lang in langs.values():
-    student_langs = student_langs | lang
-print(len(student_langs))
-for lang in student_langs:
-    print(lang)
+# языки, которые знают все школьники
+all_lng = list(reduce(lambda x, y: x | y, langs))
+print(len(all_lng))
+print('Все языки которые знают ученики: ', *all_lng)
 
-# languages which know every students
-every_body_lang = langs[1]
-for lang in langs.values():
-    every_body_lang = every_body_lang & lang
-print(len(every_body_lang))
-if len(every_body_lang):
-    for lang in every_body_lang:
-        print(lang)
+# языки, которые знает хотя бы один школьник
+popular_lng = list(reduce(lambda x, y: x & y, langs))
+if popular_lng:
+    print(len(popular_lng))
+    print('Все языки которые знают все ученики: ', *popular_lng)
 else:
-    print("No these languages")
+    print('Таких языков нет')
