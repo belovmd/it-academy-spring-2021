@@ -3,7 +3,7 @@
 CHANGE TASK TO MORE DIFFICULT!
 
 Sum of Pairs
-Given a list of integers and a single sum value, return the first two values 
+Given a list of integers and a single sum value, return the first two values
 (parse from the left please) in order of appearance that add up to form the sum.
 
 sum_pairs([11, 3, 7, 5],         10)
@@ -28,7 +28,7 @@ sum_pairs([10, 5, 2, 3, 7, 5],         10)
 == [3, 7]
 Negative numbers and duplicate numbers can and will appear.
 
-NOTE: There will also be lists tested of lengths upwards of 10,000,000 elements. 
+NOTE: There will also be lists tested of lengths upwards of 10,000,000 elements.
 Be sure your code doesn't time out.
 """
 

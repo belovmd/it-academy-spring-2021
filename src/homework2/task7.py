@@ -13,8 +13,8 @@ c = float(input("Side c = "))
 if a + b >= c and a + c >= b and b + c >= a:
     print("Triangle existed")
     semi_perimeter = (a + b + c) / 2
-    square = (semi_perimeter * (semi_perimeter - a) *
-              (semi_perimeter - b) * (semi_perimeter - c)) ** 0.5
+    square = (semi_perimeter * (semi_perimeter - a)
+              * (semi_perimeter - b) * (semi_perimeter - c)) ** 0.5
 
     print(square)
 else:
