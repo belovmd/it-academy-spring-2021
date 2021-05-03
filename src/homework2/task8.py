@@ -1,4 +1,22 @@
 """
+5 kyu
+Human Readable Time
+
+Write a function, which takes a non-negative integer (seconds)
+as input and returns the time in a human-readable format (HH:MM:SS)
+
+HH = hours, padded to 2 digits, range: 00 - 99
+MM = minutes, padded to 2 digits, range: 00 - 59
+SS = seconds, padded to 2 digits, range: 00 - 59
+The maximum time never exceeds 359999 (99:59:59)
+"""
+
+
+def make_read(seconds):
+    return "{:02}:{:02}:{:02}".format(seconds // 3600, seconds // 60 % 60, seconds % 60)
+
+
+"""
 6 kyu
 Vasya - Clerk
 
@@ -23,17 +41,17 @@ def tickets(people):
     d25 = 0
     d50 = 0
     d100 = 0
-    for every in people:
-        if every == 25:
+    for person in people:
+        if person == 25:
             d25 += 1
-        elif every == 50:
-            if d25 >= 1:
+        elif person == 50:
+            if d25:
                 d50 += 1
                 d25 -= 1
             else:
                 return "NO"
         else:
-            if d50 >= 1 and d25 >= 1:
+            if d50 and d25:
                 d100 += 1
                 d50 -= 1
                 d25 -= 1
@@ -75,24 +93,9 @@ The input will be a non-negative integer.
 
 
 def digital_root(n):
-    summa = 0
-
-    if n > 9:
-        while n > 0:
-            digit = n % 10
-            summa += digit
-            n = n // 10
-
-            if summa > 9:
-                while summa > 0:
-                    digit = summa % 10
-                    n += digit
-                    summa = summa // 10
-
-    if summa == 0:
-        return n
-    else:
-        return summa
+    while n > 9:
+        n = (n // 10) + (n % 10)
+    return n
 
 
 """
@@ -112,20 +115,13 @@ Also, if a number is negative, return 0(for languages that do have them)
 
 def solution(number):
     if number < 0:
-        print(0)
+        return 0
     else:
         summa = 0
         for element in range(number):
             if element % 3 == 0 or element % 5 == 0:
                 summa += element
         return summa
-
-# Короткое решение:
-# def solution(number):
-#     if number < 0:
-#         print(0)
-#     else:
-#         return sum(element for element in range(number) if element % 3 == 0 or element % 5 == 0)
 
 
 """

@@ -3,12 +3,12 @@
 Учтите что в предложении есть знаки препинания.
 """
 
+import string
+
 sentence = str(input('Введите предложение со знаками препинания:'))
 
-punctuation = ['(', ')', '?', ':', ';', ',', '.', '!', '/', '"', "'"]
-
 # Удаление знаков препинания в строке
-for symbol in punctuation:
+for symbol in string.punctuation:
     sentence = sentence.replace(symbol, ' ')
 
 # Поиск самого длинного слова

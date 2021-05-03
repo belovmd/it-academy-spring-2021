@@ -8,15 +8,13 @@ number = int(input('Введите целое положительное чис�
 reversion_of_number = 0
 n = number
 
-if number < 10:
-    print('С однозначным числом операция не выполняется')
-else:
-    while n > 0:
-        digit = n % 10
-        reversion_of_number = reversion_of_number * 10 + digit
-        n = n // 10
 
-    if number == reversion_of_number:
-        print('Введенное число является палиндромом')
-    else:
-        print('Введенное число не является палиндромом')
+while n > 0:
+    digit = n % 10
+    reversion_of_number = reversion_of_number * 10 + digit
+    n = n // 10
+
+if number == reversion_of_number:
+    print('Введенное число является палиндромом')
+else:
+    print('Введенное число не является палиндромом')
