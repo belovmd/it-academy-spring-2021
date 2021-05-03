@@ -1,4 +1,9 @@
-"""Homework2 - task4"""
+"""Homework2 - task4
+
+Посчитать количество строчных (маленьких) и прописных
+(больших) букв в введенной строке. Учитывать только английские
+буквы.
+"""
 
 some_string = "Explicit is better, than Implicit."
 counter_big_letters = 0

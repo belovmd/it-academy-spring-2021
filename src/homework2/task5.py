@@ -1,4 +1,9 @@
-"""Homework2 - task5"""
+"""Homework2 - task5
+
+Выведите n-ое число Фибоначчи, используя только
+временные переменные, циклические операторы и
+условные операторы. n - вводится
+"""
 
 fib_number = int(input("Input number of Fibonacci: "))
 first_fib = 0

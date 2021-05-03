@@ -1,6 +1,5 @@
-"""Homework2 - task8_5"""
+"""Homework2 - task8_5
 
-"""
 If we list all the natural numbers below 10 that are multiples of 3 or 5,
 we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
@@ -19,6 +18,6 @@ number = 100
 result_sum = 0
 
 for index in range(1, number):
-    if index % first_digit == 0 or index % second_digit == 0:
+    if not index % first_digit or not index % second_digit:
         result_sum += index
 print(result_sum)
