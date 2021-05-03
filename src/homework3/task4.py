@@ -9,11 +9,11 @@
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 """
 
-str1 = '1 1 1 1'
+str1 = '1 1 1 1 1 1 1 1 1 1 1'
 str2 = ''.join(str1.split())
-pair_counter = 0
-for i in range(len(str2)):
-    for j in range(i + 1, len(str2)):
-        if str2[i] == str2[j]:
-            pair_counter += 1
-print(pair_counter)
+counts_dict = {}
+pairs = 0
+for char in str2:
+    counts_dict[char] = counts_dict.get(char, 0) + 1
+    pairs = pairs + (counts_dict[char] - 1)
+print(pairs)

@@ -11,9 +11,9 @@ List practice
 
 import copy
 
-task1 = [a + b for a in "ab" for b in "bcd"]
+task1 = [a + b for a in 'ab' for b in 'bcd']
 task2 = task1[::2]
-task3 = [c + d for c in "1234" for d in "a"]
+task3 = [c + d for c in '1234' for d in 'a']
 print(task3.pop(1))  # task4
 task5 = copy.deepcopy(task2)
-task5.insert(1, "2a")
+task5.insert(1, '2a')
