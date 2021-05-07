@@ -6,13 +6,13 @@
 # 5. Копирование списка и добавление элемента '2a' так, чтобы в исходном списке
 # этого элемента не было.
 
-first_list = [(el1 + el2) for el1 in ['a', 'b'] for el2 in ['b', 'c', 'd']]
+first_list = [el1 + el2 for el1 in "ab" for el2 in "bcd"]
 print("First list:", first_list)
 
 second_list = first_list[::2]
 print("Second list:", second_list)
 
-third_list = [(str(number) + "a") for number in range(1, 5)]
+third_list = [str(number) + "a" for number in "1234"]
 print("Third list:", third_list)
 
 print("Extracted element:", third_list.pop(third_list.index("2a")))

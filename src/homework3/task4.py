@@ -6,11 +6,10 @@
 # Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 
 numbers = [int(num) for num in input("Введите числа: ").split()]
-pairs = 0
+pairs, counter = 0, len(numbers)
 
-for element1 in range(len(numbers)):
-    for element2 in range(element1 + 1, len(numbers)):
-        if numbers[element1] == numbers[element2]:
-            pairs += 1
+for element in range(counter):
+    pairs += counter - 1
+    counter -= 1
 
 print(pairs)

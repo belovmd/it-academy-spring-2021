@@ -3,9 +3,9 @@
 # один раз. Элементы нужно выводить в том порядке, в котором они встречаются
 # в списке.
 
-orig_numbers = [int(num) for num in input("Введите числа: ").split()]
+original = input("Введите элементы: ").split()
 result = []
 
-[result.append(number) for number in orig_numbers if number not in result]
+[result.append(element) for element in original if element not in result]
 
-print(result)
+[print(symbol) for symbol in result]
