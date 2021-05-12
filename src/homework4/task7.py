@@ -9,8 +9,5 @@ a = 248
 b = 12
 
 while a and b:
-    if a > b:
-        a %= b
-    else:
-        b %= a
-print(a + b)
+    b, a = a % b, b
+print(a)

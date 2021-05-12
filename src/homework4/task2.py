@@ -33,8 +33,8 @@ lst_cities = []
 input_number_1 = int(input("Input number of countries: "))
 for i in range(input_number_1):
     input_data = input("Input data: ")
-    for n in range(1, len(input_data.split())):
-        dct_country_cities.setdefault(input_data.split()[0], []).append(input_data.split()[n])
+    country, *cities = input_data.split()
+    dct_country_cities.setdefault(country, cities)
 
 input_number_2 = int(input("Input number of cities: "))
 for i in range(input_number_2):
