@@ -4,10 +4,11 @@
 # Input: Цена одной вещи 3 рубля 20 копеек, посчитать 3 предмета.
 # Output: Общая цена 9 рублей 60 копеек
 
+# ------------------------------------------------------------------------------------ #
 
 a_rubl, b_coin, s_prct = map(int, input().split())
-#a_rubl = int(input())
-#b_coin = int(input())
-#s_prct = int(input())
-l = ((a_rubl*100 + b_coin) * s_prct) / 100
-print(l)
+# a_rubl = int(input())
+# b_coin = int(input())
+# s_prct = int(input())
+calculation = ((a_rubl*100 + b_coin) * s_prct) / 100
+print(calculation)
