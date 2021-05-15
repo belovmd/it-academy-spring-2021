@@ -8,8 +8,9 @@ ratings.txt – гистограмма рейтингов, years.txt – гис�
 """
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
 import re
+import seaborn as sns
+
 
 
 def gist_build(data_lst, file_name):
