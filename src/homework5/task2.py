@@ -6,7 +6,6 @@
 
 
 def my_dec(func):
-    """Функция сохраняет показание счетчика вызовов в файле 'count.txt'"""
     with open('count.txt', 'r') as fh:
         read_count = fh.read()
         if read_count:
@@ -25,7 +24,6 @@ def my_dec(func):
     return wrapper
 
 
-# Задекорируем для примера простейшую функцию
 @my_dec
 def hello_print():
     print('Hello, decorator')

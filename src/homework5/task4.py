@@ -9,50 +9,50 @@ ratings.txt – гистограмма рейтингов, years.txt – гис�
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import re
 
-# создадим вспомогательные списки для поиска нужных данных
-file_lst = []   # список состоящий из строк файла
-lst_index = []  # список номеров строк с которых начинаются таблицы с данными
-count = 0       # счетчик для нумерации строк
+
+def gist_build(data_lst, file_name):
+    data_lst.sort()
+    data_set = set(data_lst)
+    with open(file_name, 'w') as fh:
+        for element in data_set:
+            fh.writelines('| {} {}\n'.format(element, '+' * data_lst.count(element)))
+
+
+file_lst = []
+lst_index = []
+count = 0
 
 try:
-    with open('ratings.list') as fh:  # откроем файл, если такой существует
+    with open('./data_hw5/ratings.list') as fh:
         for line in fh.readlines():
-            if line.startswith('New'):  # поиск строки с заголовками таблицы
+            if line.startswith('New'):
                 count += 1
-                lst_index.append(count)  # добавляем номер необходимой строки
+                lst_index.append(count)
                 file_lst.append(line.strip().split('  '))
             else:
                 count += 1
                 file_lst.append(line.strip().split('  '))
-except IOError:  # выводим дружественное сообщение, если файл не найден
+except IOError:
     print("File not found!")
 
-top_250 = file_lst[lst_index[0]:lst_index[0] + 250]  # список тор 250 фильмов
+top_250 = [file_lst[lst_index[0] + row] for row in range(250)]  # список топ 250 фильмов
 
 # создаем список с названиеми фильмов и записываем их в файл
-titles = [str(top_250[num][-1])[:-7] for num in range(len(top_250))]
+titles = [top_250[num][-1].split() for num in range(len(top_250))]
+titles = [' '.join(titles[num][:-1]) for num in range(len(titles))]
 with open('top250_movies.txt', 'w') as fh:
     for title in titles:
         fh.writelines('{}\n'.format(title))
 
 # создаем отсортированный список рейтингов и записываем в файл гистограмму
 ratings = [float(top_250[num][2]) for num in range(len(top_250) - 1)]
-ratings.sort()
-ratings_set = set(ratings)
-with open('ratings.txt', 'w') as fh:
-    for rating in ratings_set:
-        fh.writelines('| {} {}\n'.format(rating, '+' * ratings.count(rating)))
+gist_build(ratings, 'ratings.txt')
 
 # создаем отсортированный список по годам и записываем в файл гистограмму
-years_cell = [str(top_250[num][-1]).strip().split(' (')
-              for num in range(len(top_250))]
-years = [int(years_cell[num][1][:4]) for num in range(len(years_cell) - 1)]
-years.sort()
-years_set = set(years)
-with open('years.txt', 'w') as fh:
-    for year in years_set:
-        fh.writelines('| {} {}\n'.format(year, '+' * years.count(year)))
+years = [int(re.findall(r'[(](\d{4})', str(top_250[num]))[0]) for num in range(len(top_250))]
+gist_build(years, 'years.txt')
 
 # создадим таблицу с помощью pandas
 columns = file_lst[lst_index[0] - 1]  # шапка таблицы

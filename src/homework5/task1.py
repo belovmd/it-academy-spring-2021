@@ -19,25 +19,13 @@ def runner(*args):
 
         return getattr(funcs_import, fun)()
 
-    if not len(args):  # если функция runner() вызвана без аргументов
-        # извлекаем функции модуля
+    if not len(args):
         functions = [fun for fun in dir(funcs_import)
-                     if not fun.startswith('__')]
+                     if not fun.startswith('__') and '__call__' in dir(fun)]
         # вызываем фунции через print для наглядонсти
         print(*[call_fun(fun) for fun in functions], sep='\n')
-        # иначе вызов функции реализуется через for-loop
-        # for fun in functions:
-        #     call_fun(fun)
     else:
-        # args - это tuple, поэтому посчитаем его длинну для вызова функции
-        functions = args
-        if len(functions) == 1:
-            print(call_fun(functions[0]))
-            #  call_fun(functions[0])
-        else:
-            print(*[call_fun(fun) for fun in functions], sep='\n')
-            # for fun in functions:
-            #     call_fun(fun)
+        print(*[call_fun(fun) for fun in args], sep='\n')
 
 
 runner()

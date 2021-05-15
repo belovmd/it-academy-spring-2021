@@ -7,16 +7,33 @@
  get_ranges([2, 3, 8, 9]) // '2-3,8-9'
  """
 
+# def get_ranges(lst):
+#     ranges = []
+#     a = b = lst[0]  # a - start of range, b - end of range
+#
+#     for num in lst[1:] + [None]:
+#         if num != b + 1:
+#             ranges.append(str(a) if a == b else "{}{}{}".format(a, "-", b))
+#             a = num
+#         b = num
+#     return ",".join(ranges)
 
+
+# previous version look easier
 def get_ranges(lst):
     ranges = []
     a = b = lst[0]  # a - start of range, b - end of range
-
-    for num in lst[1:] + [None]:
-        if num != b + 1:
-            ranges.append(str(a) if a == b else "{}{}{}".format(a, "-", b))
-            a = num
-        b = num
+    if b + 1 not in lst:
+        ranges.append(str(b))
+    for num in lst[1:]:
+        if num == b + 1:
+            b = num
+            if b + 1 not in lst:
+                ranges.append("{}{}{}".format(a, "-", b))
+        else:
+            if num + 1 not in lst:
+                ranges.append(str(num))
+            a = b = num
     return ",".join(ranges)
 
 

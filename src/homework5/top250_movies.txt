@@ -27,7 +27,7 @@ The Usual Suspects
 Léon
 Saving Private Ryan
 Sen to Chihiro no kamikakushi
-Coco (
+Coco
 American History X
 C'era una volta il West
 Interstellar
@@ -135,11 +135,11 @@ Judgment at Nuremberg
 The Gold Rush
 El secreto de sus ojos
 Hauru no ugoku shiro
-Inside Out (
+Inside Out
 On the Waterfront
 The Bridge on the River Kwai
 Det sjunde inseglet
-Room (
+Room
 Lock, Stock and Two Smoking Barrels
 Mr. Smith Goes to Washington
 A Beautiful Mind
@@ -182,7 +182,7 @@ Shutter Island
 Into the Wild
 Life of Brian
 It Happened One Night
-La La Land (
+La La Land
 Relatos salvajes
 Logan
 Platoon
@@ -191,7 +191,7 @@ Network
 In the Name of the Father
 Le salaire de la peur
 Stand by Me
-Rush (
+Rush
 A Wednesday
 Ben-Hur
 The Grand Budapest Hotel
@@ -202,7 +202,7 @@ Salinui chueok
 12 Years a Slave
 Mad Max: Fury Road
 Million Dollar Baby
-Spotlight (
+Spotlight
 Thor: Ragnarok
 Stalker
 The Truman Show
@@ -248,4 +248,3 @@ Ah-ga-ssi
 Pirates of the Caribbean: The Curse of the Black Pearl
 PK
 Tenkû no shiro Rapyuta
-
