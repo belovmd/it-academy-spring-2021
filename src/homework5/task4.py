@@ -12,7 +12,6 @@ import re
 import seaborn as sns
 
 
-
 def gist_build(data_lst, file_name):
     data_lst.sort()
     data_set = set(data_lst)
