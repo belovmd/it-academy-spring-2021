@@ -26,8 +26,6 @@
 # которые знает хотя бы один школьник, на следующих строках - список таких
 # языков.
 
-import copy
-
 input_languages, unique_languages = set(), set()
 data_about_students = {}
 
