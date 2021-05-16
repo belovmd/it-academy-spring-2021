@@ -2,12 +2,20 @@
 # Даны два натуральных числа. Вычислите их наибольший общий делитель при
 # помощи алгоритма Евклида (мы не знаем функции и рекурсию).
 
-num1, num2 = 12, 198
+a, b = 12, 198
 
-while num1 != 0 and num2 != 0:
-    if num1 > num2:
-        num1 = num1 % num2
-    else:
-        num2 = num2 % num1
+if a > b:
+    num1, num2 = a, b
+else:
+    num1, num2 = b, a
 
-print("Наибольший общий делитель равен:", num1 + num2)
+nod = True
+
+while nod and num1 and num2:
+    nod = num1 % num2
+    num1, num2 = num2, nod
+    if not nod:
+        print("НОД равен", num1)
+        break
+else:
+    print("Ошибка. Одно из чисел равно 0")

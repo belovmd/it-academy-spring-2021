@@ -28,37 +28,26 @@
 
 import copy
 
-languages = []
+input_languages, unique_languages = set(), set()
 data_about_students = {}
 
 for students in range(int(input("Number of students: "))):
     for num_of_languages in range(int(input("Languages of a new student: "))):
-        language = input("Language learned: ")
-        languages.append(language)
-        copy_for_dict = copy.deepcopy(languages)
-    data_about_students[students] = copy_for_dict
-    languages.clear()
-
-# for checking lines 32-40:
-# data_about_students = {0: ['ru', 'eng'], 1: ['ru', 'bel', 'eng'],
-#                        2: ['ru', 'fr', 'it']}
-
-working_set_of_langs = set(data_about_students[0])
+        input_languages.add(input("Language learned: "))
+        data_about_students[students] = input_languages.copy()
+    input_languages.clear()
 
 for key, value in data_about_students.items():
-    working_set_of_langs.intersection_update(set(value))
+    unique_languages.update(value)
 
-print("Number of common languages:", len(working_set_of_langs))
-print("All students know:", working_set_of_langs.pop())
-
-working_set_of_langs = set(data_about_students[0])
+common_language = unique_languages.copy()
 
 for key, value in data_about_students.items():
-    working_set_of_langs.update(set(value))
+    common_language.intersection_update(value)
 
-print("Number of languages that at least one student know:",
-      len(working_set_of_langs))
+print("Number of common languages:", len(common_language),
+      "all students know:", common_language.pop(), sep="\n")
 
-num_of_iterations = len(working_set_of_langs)
-for _ in range(num_of_iterations):
-    print(working_set_of_langs.pop())
+print("Number of languages that at least one student knows:",
+      len(unique_languages))
+[print(unique_languages.pop(), sep="\n") for _ in range(len(unique_languages))]

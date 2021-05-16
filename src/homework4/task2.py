@@ -22,19 +22,18 @@
 # Russia
 # Russia
 
-
 def get_country(dct, value):
     for key, val in dct.items():
-        if city in val:
-            return key
+        if city in key:
+            return val
 
 
 dct = {}
 
 for repetitions in range(int(input("Number of countries: "))):
-    geographic_data = input("Geographic data: ").split()
-    country, cities = geographic_data[0], geographic_data[1:]
-    dct[country] = cities
+    country, *cities = input("Geographic data: ").split()
+    for city in cities:
+        dct[city] = country
 
 for outputs in range(int(input("Number of cities: "))):
     city = input("Enter a city: ")

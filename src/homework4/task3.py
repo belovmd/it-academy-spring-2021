@@ -3,5 +3,6 @@
 
 numbers1 = [1, 2, 3, 0, 4, 5, 10, 17, 8, 9]
 numbers2 = [10, 11, 1, 2, 5, 8, 0, 12, 13, 15, 19]
+common = set(numbers1) & set(numbers2)
 
-print(len(set(numbers1 + numbers2)))
+print(len(common))
