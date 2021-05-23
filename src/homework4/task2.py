@@ -15,17 +15,18 @@ def cities_query(text_reader: TextIOBase) -> None:
     Выходные данные:
         Для каждого из запроса выведите название страны, в котором находится данный город.
     """
-    countries = {}
+    cities = {}
     number_of_countries = int(text_reader.readline().strip())
     while number_of_countries:
-        country, *cities = text_reader.readline().strip().split()
-        if country and cities:
-            countries[country] = cities
+        country, *cities_list = text_reader.readline().strip().split()
+        if all((country, cities_list)):
+            for city in cities_list:
+                cities.setdefault(city, []).append(country)
         number_of_countries -= 1
     number_of_queries = int(text_reader.readline().strip())
     while number_of_queries:
         query = text_reader.readline().strip()
-        print(*[country for country, cities in countries.items() if query in cities])
+        print(*cities.get(query, ['-- the country of location of the city is not defined --', ]))
         number_of_queries -= 1
 
 
@@ -37,9 +38,10 @@ if __name__ == '__main__':
         Russia Moscow Petersburg Novgorod Kaluga
         Belarus Minsk Brest Gomel Grodno Mogilev Vitebsk
         France Paris Marseille Lyon Nice Cannes Brest
-        3
+        4
         Cannes
         Petersburg
+        Kitezh-grad
         Brest"""
 
     with StringIO(input_text) as reader:
