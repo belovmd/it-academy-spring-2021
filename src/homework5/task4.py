@@ -30,9 +30,10 @@ def imdb_data(source_file):
         data = dict(zip(keys, lst))
         # выделение года, помещенного в скобки в конце названия каждого фильма, из названия и
         # помещение в отдельный ключ словаря
-        data['Year'] = data['Title'][-4:-1]
+        last_open_parenthesis_idx = data['Title'].rfind('(')
+        data['Year'] = data['Title'][last_open_parenthesis_idx + 1:last_open_parenthesis_idx + 5]
         # удаление года из названия фильма
-        data['Title'] = data['Title'][:-7]
+        data['Title'] = data['Title'][:last_open_parenthesis_idx - 1]
         return data
 
     try:

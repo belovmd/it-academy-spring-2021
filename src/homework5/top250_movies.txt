@@ -27,7 +27,7 @@
  27 Léon
  28 Saving Private Ryan
  29 Sen to Chihiro no kamikakushi
- 30 Coco (
+ 30 Coco
  31 American History X
  32 C'era una volta il West
  33 Interstellar
@@ -135,11 +135,11 @@
 135 The Gold Rush
 136 El secreto de sus ojos
 137 Hauru no ugoku shiro
-138 Inside Out (
+138 Inside Out
 139 On the Waterfront
 140 The Bridge on the River Kwai
 141 Det sjunde inseglet
-142 Room (
+142 Room
 143 Lock, Stock and Two Smoking Barrels
 144 Mr. Smith Goes to Washington
 145 A Beautiful Mind
@@ -182,7 +182,7 @@
 182 Into the Wild
 183 Life of Brian
 184 It Happened One Night
-185 La La Land (
+185 La La Land
 186 Relatos salvajes
 187 Logan
 188 Platoon
@@ -191,7 +191,7 @@
 191 In the Name of the Father
 192 Le salaire de la peur
 193 Stand by Me
-194 Rush (
+194 Rush
 195 A Wednesday
 196 Ben-Hur
 197 The Grand Budapest Hotel
@@ -202,7 +202,7 @@
 202 12 Years a Slave
 203 Mad Max: Fury Road
 204 Million Dollar Baby
-205 Spotlight (
+205 Spotlight
 206 Thor: Ragnarok
 207 Stalker
 208 The Truman Show
