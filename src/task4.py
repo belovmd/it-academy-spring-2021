@@ -8,6 +8,7 @@ Homework 5 - Task4
 ratings.txt – гистограмма рейтингов, years.txt – гистограмма годов.
 """
 
+
 dct_imdb250 = {}
 dct_years = {}
 dct_ratings = {}
@@ -49,4 +50,3 @@ else:
     write_result(dct_imdb250, 'top250_movies.txt')
     write_result(dct_ratings, 'ratings.txt', hist=1)
     write_result(dct_years, 'years.txt', hist=1)
-

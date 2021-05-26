@@ -4,6 +4,7 @@ Homework 5 - Task2
 функции (за все время вызовов, не только текущий запуск программы)
 """
 
+
 from datetime import datetime
 
 
@@ -22,7 +23,7 @@ def my_dec(func):
 
         with open('task2_result.txt', 'w') as fh2:
             for line1 in var_between_runs:
-                fh2.write(str(line1)+"\n")
+                fh2.write(str(line1) + "\n")
             fh2.close()
         return result
     return wrapper
