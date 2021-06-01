@@ -3,6 +3,7 @@ import hwFuncs
 
 def runner(*args):
     """Напишите функцию runner.
+
     (все станет проще когда мы изучим модули, getattr
     и setattr)
     1. runner() – все фукнции вызываются по очереди
