@@ -7,5 +7,6 @@
 Определите, сколько различных слов содержится в этом тексте.
 """
 
+
 input_str = "qwerty qwerty qwerty       qwerty max"
 print(len(set(input_str.split())))

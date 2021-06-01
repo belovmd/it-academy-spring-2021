@@ -20,8 +20,8 @@
 num_of_countries = int(input())
 data = {}
 while num_of_countries > 0:
-    line = input().split()
-    data[line[0]] = line[1:]
+    country, *sities = input().split()
+    data[country] = sities
     num_of_countries -= 1
 
 requests = []

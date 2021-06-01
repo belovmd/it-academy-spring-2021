@@ -7,13 +7,11 @@
 (мы не знаем функции и рекурсию).
 """
 
+
 a = int(input())
 b = int(input())
 
-while a and b:
-    if a > b:
-        a %= b
-    else:
-        b %= a
+while a != b:
+    a, b = min(a, b), abs(a - b)
 
-print(max(a, b))
+print(a)

@@ -6,6 +6,7 @@
 которые знает хотя бы один из школьников.
 """
 
+
 num_of_schoolboys = int(input())
 schoolboy_lang = {}
 all_lang = set()
