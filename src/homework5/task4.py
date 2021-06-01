@@ -20,13 +20,15 @@ def dict_top250():
 
     dict_top_250 = dict()
     index = 1
+    topX = 250
+    len_distribution = 10
     try:
         with open('ratings.list', 'r') as rating_list:
 
-            while len(dict_top_250) != 250:
+            while len(dict_top_250) != topX:
                 line = rating_list.readline()
                 formatted_line = line.strip().split()
-                if formatted_line and formatted_line[0].isdigit() and len(formatted_line[0]) == 10:
+                if formatted_line and formatted_line[0].isdigit() and len(formatted_line[0]) == len_distribution:
                     dict_top_250[index] = [' '.join(formatted_line[3:-1]),
                                            int(formatted_line[-1][1:5]),
                                            float(formatted_line[2])]
