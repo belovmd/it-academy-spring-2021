@@ -47,18 +47,19 @@ def writing_in_files(file, lst):
         file_for_writing.write(item)
         file_for_writing.write("\n")
     file_for_writing.close()
-    return True
+    return
 
 
 def histogram(lst):
-    dict_ = {}
+    dict_, histogram_list = {}, []
     for item in lst:
         if item in dict_.keys():
             dict_[item] += 1
         else:
             dict_[item] = 1
     for keys in sorted(dict_.keys(), reverse=True):
-        print("{}: {}".format(keys, "*" * dict_[keys]))
+        histogram_list.append("{}: {}".format(keys, "*" * dict_[keys]))
+    return histogram_list
 
 
 text = []
@@ -66,15 +67,11 @@ with open("ratings.list", "r") as original:
     for i in original.readlines():
         text.append(i.strip())
 
-list_of_250_strings = text[headers(text):headers(text) + 250]
+list_of_250_strings = text[headers(text):headers(text)+250]
 list_of_movies = cleaning_lines(list_of_250_strings)
 films, years, ratings = info_for_docs(list_of_movies)
 years = cleaning_dates(years)
 
 writing_in_files("top250_movies.txt", films)
-writing_in_files("ratings.txt", ratings)
-writing_in_files("years.txt", years)
-
-histogram(years)
-print("\n")
-histogram(ratings)
+writing_in_files("ratings.txt", histogram(ratings))
+writing_in_files("years.txt", histogram(years))
