@@ -66,7 +66,7 @@ with open("ratings.list", "r") as original:
     for i in original.readlines():
         text.append(i.strip())
 
-list_of_250_strings = text[headers(text):headers(text)+250]
+list_of_250_strings = text[headers(text):headers(text) + 250]
 list_of_movies = cleaning_lines(list_of_250_strings)
 films, years, ratings = info_for_docs(list_of_movies)
 years = cleaning_dates(years)

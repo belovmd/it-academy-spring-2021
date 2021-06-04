@@ -28,6 +28,7 @@ def counter(func):
 def f(num):
     return num
 
+
 print(f(1))
 print(f(2))
 print(f(3))

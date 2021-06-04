@@ -10,7 +10,7 @@ def cleaning(lst):
     for str_ in lst:
         if isinstance(str_, str) is True:
             n = str_.find("-")
-            if str_[:n] == str_[n+1:]:
+            if str_[:n] == str_[n + 1:]:
                 lst.insert(lst.index(str_), str_[:n])
                 lst.remove(str_)
     return lst
@@ -23,7 +23,7 @@ def list_changes(lst):
             n2 += 1
             change += 1
         else:
-            new_lst.append("{}-{}".format(lst[n1], lst[n2-1]))
+            new_lst.append("{}-{}".format(lst[n1], lst[n2 - 1]))
             lst = lst[n2:]
             n1, n2, change = 0, 1, 1
     if len(lst) == 2:
