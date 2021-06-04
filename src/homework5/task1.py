@@ -5,9 +5,10 @@
 # runner(‘func_name’) – вызывается только функцию func_name.
 # runner(‘func’, ‘func1’...) - вызывает все переданные функции.
 
+import my_funcs
+from my_funcs import blocks
 from my_funcs import histogram
 from my_funcs import stars
-from my_funcs import blocks
 
 funcs = (histogram(), stars(), blocks())
 
@@ -19,6 +20,7 @@ def runner(*args):
             return attr
         else:
             return funcs
+
 
 runner()
 runner("stars")
