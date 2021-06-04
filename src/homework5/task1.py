@@ -3,7 +3,7 @@
 # setattr)
 # runner() – все фукнции вызываются по очереди
 # runner(‘func_name’) – вызывается только функцию func_name.
-# runner(‘func’, ‘func1’...) - вызывает все переданные функции
+# runner(‘func’, ‘func1’...) - вызывает все переданные функции.
 
 from my_funcs import histogram, stars, blocks
 
