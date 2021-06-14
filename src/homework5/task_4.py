@@ -33,15 +33,17 @@ with open('./data_hw5/ratings.list') as rating_list:
     top250_movies = []
     years = []
     ratings = []
+    start_of_statistic = 29
+    end_of_statistic = 278
 
     for elem in rating_list:
         start += 1
-        if start >= 29:
+        if start >= start_of_statistic:
             years += re.findall(r"(?<=\()\d{4}", elem)
             ratings += re.findall(r"\d\.\d", elem)
             top250_movies += re.findall(r"(?<=\d\.\d\s{2}).+(?=\s\()", elem)
 
-        if start == 278:
+        if start == end_of_statistic:
             break
 
     years_histogram = create_histogram(years)

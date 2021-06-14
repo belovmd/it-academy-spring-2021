@@ -6,44 +6,48 @@ Task 2.
 (за все время вызовов, не только текущий запуск программы)
 """
 
+import json
+
 
 def my_dec(func):
-    results = []
 
     def wrapper(*args, **kwargs):
 
-        nonlocal results
-        if args[0] == 'check':
-            print(f"Result of all calls of {func.__name__}: {results}")
-            return
-
         value = func(*args, **kwargs)
 
-        results.append(value)
+        try:
+            with open('./results.json', 'r') as file:
+                results = json.load(file)
+        except IOError:
+            results = {}
+        finally:
+            if func.__name__ not in results:
+                results[func.__name__] = []
+            results[func.__name__].append(value)
+            with open('results.json', 'w') as file:
+                json.dump(results, file, indent='    ')
 
         return value
 
     return wrapper
 
 
-def func_1(num_):
+def add_two(num_):
     return num_ + 2
 
 
-func_1 = my_dec(func_1)
-
-func_1(2)
-func_1(3)
-func_1(4)
-func_1('check')
+add_two = my_dec(add_two)
 
 
 @my_dec
-def func_2(num_):
+def add_three(num_):
     return num_ + 3
 
 
-func_2(4)
-func_2(5)
-func_2(6)
-func_2('check')
+add_two(2)
+add_two(3)
+add_two(4)
+add_three(4)
+add_three(5)
+add_three(6)
+add_three(7)

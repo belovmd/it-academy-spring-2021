@@ -25,7 +25,7 @@ def call_all_functions():
             for attr in dir(module):
                 if not attr.startswith('_'):
                     method = getattr(module, attr)
-                    if "<class 'function'>" in str(type(method)):
+                    if callable(method):
                         method()
 
 
