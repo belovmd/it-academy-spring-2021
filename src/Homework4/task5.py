@@ -46,9 +46,10 @@ for i in range(num_of_students):
     languages = set()
 
     while num_of_languages != len(languages):
-        languages.add(input(f"введите язык Nr.{len(languages) + 1} для {i}го школьника: "))
+        languages.add(input(f"введите язык Nr.{len(languages) + 1} для {i + 1}го школьника: "))
 
     if not i:
+        # initial update, otherwise intersection_update will return always empty set
         lang_each_know.update(languages)
     else:
         lang_each_know &= languages

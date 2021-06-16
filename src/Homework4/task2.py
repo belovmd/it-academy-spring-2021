@@ -40,8 +40,7 @@ dct_db = {}
 quantity_of_countries = int(input("Введите количество стран:\n"))
 
 while len(dct_db) != quantity_of_countries:
-    user_input_lst = input("Введите страну и города:\n").split(" ")
-    country, cities = user_input_lst[0], user_input_lst[1:]
+    country, *cities = input("Введите страну и города:\n").split(" ")
     dct_db[country] = cities
 
 quantity_of_cities = int(input("Введите количество городов для поиска:\n"))

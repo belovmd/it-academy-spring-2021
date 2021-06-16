@@ -27,3 +27,11 @@ def count_unique_words(input_str):
 
 print(count_unique_words(str_1))
 print(count_unique_words(str_2))
+
+
+def count_unique_words_v2(input_str):
+    return len(set(input_str.split()))
+
+
+print(count_unique_words_v2(str_1))
+print(count_unique_words_v2(str_2))
