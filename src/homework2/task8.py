@@ -98,9 +98,10 @@ The last address will always be greater than the first one.
 def ips_between(start, end):
     st, e = start.split('.'), end.split('.')
     result = 0
+    max_ips = 256
 
-    for i in range(4):
-        result += (int(e[i]) - int(st[i])) * 256 ** (3 - i)
+    for degree in range(4):
+        result += (int(e[degree]) - int(st[degree])) * max_ips ** (3 - degree)
 
     return result
 

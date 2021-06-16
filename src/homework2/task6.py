@@ -1,4 +1,4 @@
-def isPalindrome(num):
+def is_palindrome(num):
     value_to_divide = num
     value_to_check = 0
 

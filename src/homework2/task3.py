@@ -7,5 +7,4 @@ def remove_repetition(sentence):
     return resulting_str
 
 
-# TEST
 print(remove_repetition("abc cde def"))
