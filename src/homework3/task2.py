@@ -14,7 +14,7 @@ a = [i + j for i in 'ab' for j in 'bcd']
 print(a)
 print(a[::2])
 
-b = [i + j for i in '1234' for j in 'a']
+b = [i + j for i in '1234' for j in 'a']  # a is not a variable
 print(b)
 print(b.pop(1))
 
