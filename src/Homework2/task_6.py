@@ -1,5 +1,5 @@
 """
-Homework2 (task6)
+Homework2 (task_6)
 
 Определить числа палиндромы
 
