@@ -1,17 +1,18 @@
 """
+Homework2 (task7)
 Даны: три стороны треугольника. Требуется: проверить, действительно ли это стороны треугольника.
 Если стороны определяют треугольник, найти его площадь. Если нет, вывести сообщение о неверных данных.
 
 """
-s = 0
-a, b, c = 12, 13, 15
-divisor = 2
-degree = 0.5
-print(a, b, c)
-if not a + b > c and c + b > a and a + c > b:
+
+A, B, C = 12, 13, 15
+DIVISOR = 2
+DEGREE = 0.5
+print(A, B, C)
+if not A + B > C and C + B > A and A + C > B:
     print('Введены неверные данные')
 else:
-    p = (a + b + c) / divisor
-    buffer = p * (p - a) + (p - b) * (p - c)
-    s = buffer ** degree
-    print('Площадь треугольнка S:', s)
+    p = (A + B + C) / DIVISOR
+    _x = p * (p - A) + (p - B) * (p - C)
+    AREA = _x ** DEGREE
+    print('Площадь треугольнка: ', AREA)

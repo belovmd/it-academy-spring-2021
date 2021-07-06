@@ -105,5 +105,3 @@ venv.bak/
 
 #additional
 .idea/
-.gitignore/
-src/__init__.py
