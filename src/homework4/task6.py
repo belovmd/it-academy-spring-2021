@@ -18,4 +18,3 @@ for letter in text.lower():
 
 dif_words.remove('')
 print(len(dif_words))
-

@@ -43,4 +43,3 @@ each_lang = set.union(*general_lang)
 
 print(all_known_lang)
 print(each_lang)
-
