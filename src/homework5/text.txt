@@ -1,0 +1,2 @@
+func_second 8
+func_first 4
