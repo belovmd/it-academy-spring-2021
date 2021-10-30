@@ -15,9 +15,9 @@ def get_ranges(*args):
     str_ = ""
     len_args = len(num_list)
     for num in range(len_args - 1):
-        if (num_list[num] - 1) != num_list[num-1] and (num_list[num] + 1) == num_list[num + 1]:
+        if (num_list[num] - 1) != num_list[num - 1] and (num_list[num] + 1) == num_list[num + 1]:
             str_ += str(num_list[num]) + '-'
-        elif (num_list[num] - 1) == num_list[num-1] and (num_list[num] + 1) == num_list[num + 1]:
+        elif (num_list[num] - 1) == num_list[num - 1] and (num_list[num] + 1) == num_list[num + 1]:
             continue
         else:
             str_ += str(num_list[num]) + ','
