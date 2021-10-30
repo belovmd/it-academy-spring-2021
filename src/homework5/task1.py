@@ -3,9 +3,8 @@
 # runner() – все фукнции вызываются по очереди
 # runner(‘func_name’) – вызывается только функцию func_name.
 # runner(‘func’, ‘func1’...) - вызывает все переданные функции
-
-import task1_func
 from inspect import isfunction
+import task1_func
 
 
 def runner(*args):
