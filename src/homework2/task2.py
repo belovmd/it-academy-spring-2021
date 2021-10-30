@@ -3,7 +3,7 @@
 
 str_ = 'Привет, безумный мир.'
 
-marks = '''!()-[]{};?@#$%:'"\,./^&amp;*_'''
+marks = '''!()-[]{};?@#$%:'",./^&amp;*_'''
 
 for letter in str_:
     if letter in marks:
