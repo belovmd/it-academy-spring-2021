@@ -11,5 +11,5 @@ a_rub, b_coin, s_product = map(int, input().split())
 # a_rub = int(input())
 # b_coin = int(input())
 # s_product = int(input())
-calculation = ((a_rub*100 + b_coin) * s_product) / 100
+calculation = ((a_rub * 100 + b_coin) * s_product) / 100
 print(calculation)
