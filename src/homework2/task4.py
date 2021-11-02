@@ -8,24 +8,24 @@ print("Entered text: ", text2)
 
 marks = ',.///()[]{};...:'
 for mark in marks:
-  text2.replace(mark, '')
+    text2.replace(mark, '')
 
 space_marks2 = 0
 for i in text2:
-  if i == marks or i == ' ':
-    space_marks2 += 1
+    if i == marks or i == ' ':
+        space_marks2 += 1
 
 small_letters2 = 0
 big_letters2 = 0
 other_symbols2 = 0
 
 for i in text2:
-  if i >= 'a' and i <= 'z':
-    small_letters2 += 1
-  elif i >= 'A' and i <= 'Z':
-    big_letters2 += 1
-  elif i == "'":
-    other_symbols2 += 1
+    if 'a' <= i <= 'z':  # if i >= 'a' and i <= 'z':
+        small_letters2 += 1
+    elif 'A' <= i <= 'Z':  # elif i >= 'A' and i <= 'Z':
+        big_letters2 += 1
+    elif i == "'":
+        other_symbols2 += 1
 
 print('Total number of elements in entered text = ', len(text2))
 print('Number of small letters in entered text = ', small_letters2)
