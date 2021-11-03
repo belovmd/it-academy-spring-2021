@@ -10,18 +10,9 @@ B = 9
 C = 10
 # p = (A+B+C)//2 # semi-perimeter
 # S = (abs(p*(p-A)*(p-B)*(p-C)))**0.5 # area
-if (
-    A < B + C
-    and B < A + C
-    and C < A + B
-):
-    # print("A, B, C - sides of a triangle")
-    # print ((A + B + C) // 2)
-    x = (abs(((A + B + C) // 2)
-             * (((A + B + C) // 2) - A)
-             * (((A + B + C) // 2) - B)
-             * (((A + B + C) // 2) - C))
-         ** 0.5)
-    print("Area of a triangle:", x)
+if A < B + C and B < A + C and C < A + B:
+    p = ((A + B + C) // 2)
+    s = (abs(p * (p - A) * (p - B) * (p - C)) ** 0.5)
+    print("Area of a triangle:", s)
 else:
     print("Wrong data")
