@@ -49,7 +49,6 @@ while input_M > 0:
         for elem in value:
             if elem == data_request:  # in или ==
                 print(key)
-
     input_M -= 1
 
 print(dct)
