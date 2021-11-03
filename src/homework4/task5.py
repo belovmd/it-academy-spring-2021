@@ -37,7 +37,8 @@ count_for_while = 1
 while count_for_while <= number_of_pupils:
     number_of_languages = input('Please, enter amount of learned languages by pupil: ', )
     for i in range(1, len(number_of_languages) + 1):
-        input_languages = input("Please, enter names of languages (use 'space' as separator): ", ).split()
+        input_languages = input("Please, enter names of languages"
+                                " (use 'space' as separator): ", ).split()
         all_pupils_languages.append(input_languages)
     count_for_while += 1
 

@@ -18,7 +18,8 @@ line_2 = line.strip().split()
 print("1:", line_2)
 clear_data = []
 #  punctuation_marks = '''.,:;...!?&\n\t\r\\ '''
-line_2 = [i.replace('.', '').replace(',', '').replace(':', '').replace(';', '').replace('!', '').replace('!', '')
+line_2 = [i.replace('.', '').replace(',', '').replace(':', '')
+          .replace(';', '').replace('!', '').replace('!', '')
           .replace('?', '').replace('#', '').replace('&', '') for i in line_2]
 print("2:", line_2)
 line_3 = list(set(line_2))
