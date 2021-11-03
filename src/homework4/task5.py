@@ -4,7 +4,8 @@
 #
 # Входные данные
 # Первая строка входных данных содержит количество школьников N.
-# Далее идет N чисел Mi, после каждого из чисел идет Mi строк, содержащих названия языков, которые знает i-й школьник.
+# Далее идет N чисел Mi, после каждого из чисел идет Mi строк,
+# содержащих названия языков, которые знает i-й школьник.
 #
 # Пример входных данных:
 # 3          # N количество школьников
@@ -35,7 +36,7 @@ number_of_languages = []
 count_for_while = 1
 while count_for_while <= number_of_pupils:
     number_of_languages = input('Please, enter amount of learned languages by pupil: ', )
-    for i in range(1, len(number_of_languages)+1):
+    for i in range(1, len(number_of_languages) + 1):
         input_languages = input("Please, enter names of languages (use 'space' as separator): ", ).split()
         all_pupils_languages.append(input_languages)
     count_for_while += 1
