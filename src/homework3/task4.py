@@ -19,7 +19,7 @@ print(len(work_data))
 
 pairs1 = 0
 for x in range(len(work_data)):
-    for y in range(x+1, len(work_data)):
+    for y in range(x + 1, len(work_data)):
         if work_data[x] == work_data[y]:
             print("x-", x, ";", "y-", y)
             print(work_data[x], work_data[y])
