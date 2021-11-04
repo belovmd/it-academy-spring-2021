@@ -156,7 +156,7 @@ def next_bigger(n):
             tail = lst_[i::]
             tail.append(lst_[i - 1])
             tail.sort()
-            a = tail.pop((tail.index(lst_[i-1]) + tail.count(lst_[i-1])))
+            a = tail.pop((tail.index(lst_[i - 1]) + tail.count(lst_[i - 1])))
             tail.insert(0, a)
             if i == 1:
                 lst_end.extend(tail)
