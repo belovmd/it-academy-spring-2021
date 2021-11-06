@@ -1,5 +1,5 @@
-import unittest
 from task3 import numbers
+import unittest
 
 
 class TestNumber(unittest.TestCase):
@@ -20,7 +20,7 @@ class TestNumber(unittest.TestCase):
 
     def test_types(self):
 
-        self.assertRaises(TypeError, numbers, 5+2j, 7+2j)
+        self.assertRaises(TypeError, numbers, 5+2j, 5+2j)
         self.assertRaises(TypeError, numbers, 'hello', 8)
         self.assertRaises(TypeError, numbers, 2.6, 8.8)
         self.assertRaises(TypeError, numbers, [12, 20, 34], 22)
