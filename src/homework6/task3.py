@@ -9,10 +9,10 @@
 
 def numbers(first_num, second_num):
     # Мои исправления на основании тестов
-    if type(first_num) is not int or type(second_num) is not int:
-        raise TypeError('Некорректный тип данных')
-    if first_num < 1 or second_num < 1:
-        raise ValueError('Число не натуральное')
+    # if type(first_num) is not int or type(second_num) is not int:
+    #     raise TypeError('Некорректный тип данных')
+    # if first_num < 1 or second_num < 1:
+    #     raise ValueError('Число не натуральное')
     if first_num < second_num:
         first_num, second_num = second_num, first_num
     elif first_num == second_num:
