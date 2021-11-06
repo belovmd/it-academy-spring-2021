@@ -22,55 +22,52 @@ from task3 import numbers
 # Известно, что длина проволоки составляет L. Для скольких значений L ≤ 1 500 000,
 # сгибая проволоку, можно получить ровно один прямоугольный треугольник с целыми сторонами?
 #
-# Примечание: Эта задача была недавно изменена. Убедитесь в том, что вы используете
-# правильные параметры
-
 # How it maid https://en.wikipedia.org/wiki/Pythagorean_triple
 
-m = 2
-n = 1
-lst = []
-perimeter = 12
-wire = 1500000
 
-while True:
-    d = (m - n) % 2
-    if perimeter > wire:
-        n = n + 1
-        m = n + 1
-
-    if d == 1 and numbers(m, n) == 1:
-        lst.append([m, n])
-        m += 1
-    else:
-        m += 1
-
-    perimeter = (m ** 2 - n ** 2) + (2 * m * n) + (m ** 2 + n ** 2)
-
-    if m == (n + 2) and perimeter > wire:
-        perimeter = 12
-        break
-
-dct = {}
-
-for i in range(len(lst)):
-    m = lst[i][0]
-    n = lst[i][1]
+def triangle(wire):
+    m = 2
+    n = 1
+    lst = []
     perimeter = 12
-    k = 1
-    while perimeter <= wire:
-        a = k * (m ** 2 - n ** 2)
-        b = k * (2 * m * n)
-        c = k * (m ** 2 + n ** 2)
-        perimeter = a + b + c
-        k += 1
-        if perimeter <= wire:
-            dct.setdefault(perimeter, []).append([a, b, c])
 
-triangles_numbers = 0
+    while True:
+        d = (m - n) % 2
+        if perimeter > wire:
+            n = n + 1
+            m = n + 1
 
-for value in dct.values():
-    if len(value) == 1:
-        triangles_numbers += 1
+        if d == 1 and numbers(m, n) == 1:
+            lst.append([m, n])
+            m += 1
+        else:
+            m += 1
 
-print(triangles_numbers)
+        perimeter = (m ** 2 - n ** 2) + (2 * m * n) + (m ** 2 + n ** 2)
+
+        if m == (n + 2) and perimeter > wire:
+            break
+
+    dct = {}
+
+    for i in range(len(lst)):
+        m = lst[i][0]
+        n = lst[i][1]
+        perimeter = 12
+        k = 1
+        while perimeter <= wire:
+            a = k * (m ** 2 - n ** 2)
+            b = k * (2 * m * n)
+            c = k * (m ** 2 + n ** 2)
+            perimeter = a + b + c
+            k += 1
+            if perimeter <= wire:
+                dct.setdefault(perimeter, []).append([a, b, c])
+
+    triangles_numbers = 0
+
+    for value in dct.values():
+        if len(value) == 1:
+            triangles_numbers += 1
+
+    return triangles_numbers
