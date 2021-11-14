@@ -71,3 +71,6 @@ def triangle(wire):
             triangles_numbers += 1
 
     return triangles_numbers
+
+
+triangle(1500000)
